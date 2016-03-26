@@ -1,0 +1,92 @@
+* {
+  box-sizing: border-box;
+}
+html {
+  box-sizing: border-box;
+  height: 100%;
+  min-height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+#app {
+  height: 100%;
+  min-height: 100%;
+}
+.content section {
+  font-size: 1.25em;
+  /*padding: 3em 1em;*/
+  display: none;
+  max-width: none;
+  margin: 0 auto;
+}
+.dj_name {
+  font-size: 1.25em;
+}
+.day {
+  padding-bottom: 1px;
+}
+.time {
+  font-size: 1em !important;
+}
+body {
+  background: black;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #FFF;
+  height: 100%;
+}
+.schedule {
+  display: flex;
+  height: 100%;
+}
+.schedule .stage-column {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: 1em;
+  margin-right: 1em;
+  height: 100%;
+}
+.day {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.1em;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  flex-shrink: 0n
+}
+.time-conatiner {
+  position: relative;
+  display: block;
+}
+.act {
+  display: flex;
+  flex-direction: row;
+  order-top-color: rgb(255, 255, 255);
+  border-top-style: solid;
+  border-top-width: 1px;
+  min-height: 4em;
+  position: absolute;
+  top: 0;
+}
+.time {
+  border-top-color: rgb(255, 29, 141);
+  border-top-style: solid;
+  border-top-width: 4px;
+  padding-top: 1em;
+  font-weight: 500;
+  width: 25%;
+  display: flex;
+  justify-content: center;
+}
+.e-title {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  width: 75%;
+}
+.dj_name {
+  color: rgb(255, 29, 141);
+}
