@@ -29,15 +29,15 @@ export default class App extends React.Component {
   }
 
   render() {
-    debugger;
+
     return (
-      <div>
+      <div className='app-container'>
         <Clock
           time={this.state.currentTime}
         />
         <Schedule
-          data={this.state.currentTime}
-          time={this.state.data}
+          data={this.state.data}
+          time={this.state.currentTime}
         />
       </div>
     );

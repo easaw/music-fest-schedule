@@ -1,5 +1,5 @@
 import React from 'react';
-import DateFormat from '../formatters/date.js'
+import Clock from './Clock.jsx'
 import Moment from 'moment';
 
 export default class Time extends React.Component {
@@ -23,9 +23,9 @@ export default class Time extends React.Component {
 
     return <div className="act" style={style}>
       <div className="time">
-        {DateFormat(time.start)}
-        &nbsp;
-        {DateFormat(time.end)}
+        <Clock time={time.start}/>
+          &nbsp;
+        <Clock  time={time.end} />
       </div>
       <div className="e-title">
         <span className="dj_name">
