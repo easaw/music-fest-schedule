@@ -22,7 +22,7 @@ export default class App extends React.Component {
 
   componentDidMount(){
     this.timeOutId =
-    window.setTimeOut(
+    window.setTimeout(
       this.setTime(), 60000
     );
 

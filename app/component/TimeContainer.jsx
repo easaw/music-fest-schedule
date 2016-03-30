@@ -10,7 +10,7 @@ export default class TimeContainer extends React.Component {
     const stage = this.props.stage;
     const startTime = this.props.startTime;
     const height = this.props.height;
-    debugger;
+
     const times = stage.times.sort((a,b)=> {
       return Moment(a).isBefore(b);
     });
