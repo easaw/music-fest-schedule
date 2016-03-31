@@ -1,17 +1,24 @@
 import React from 'react';
 import Time from './Time.jsx'
 import Moment from 'moment';
+import FitText from 'react-fittext';
 
 export default(props, context) => {
 
   const time = props.time;
   const startTime = props.startTime;
   const pxPerQuarterMin = props.pxPerQuarterMin;
-  //Moment.duration(Moment(end).diff(start)).asMinutes();
-  const top = Moment.duration(Moment(time.start).diff(Moment(startTime))).asMinutes() / 15 * pxPerQuarterMin;
+  const top =
+    Moment.duration(
+        Moment(time.start).diff(Moment(startTime))
+      ).asMinutes() / 15 * pxPerQuarterMin;
+  const length =
+    Moment.duration(
+      Moment(time.end).diff(Moment(time.start))
+    ).asMinutes() / 15 * pxPerQuarterMin;
 
   const style = {
-    height: "1em",
+    height: `${length}px`,
     top: `${top}px`,
     width: "100%"
   };

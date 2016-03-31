@@ -1,33 +1,37 @@
 .act {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   border-top-color: rgb(255, 255, 255);
   border-top-style: solid;
-  border-top-width: 1px;
+  border-top-width: 0.5vw;
   min-height: 4em;
   position: absolute;
   top: 0;
-  &> .time {
+  & > .time {
     border-top-color: rgb(255, 29, 141);
     border-top-style: solid;
-    border-top-width: 4px;
-    padding-top: 1em;
+    border-top-width: 1vw;
+    padding-top: 0.5vw;
     font-weight: 500;
-    width: 25%;
     display: flex;
-    justify-content: center;
-    font-size: 1em;
-
+    justify-content: start;
+    font-size: 3.5vw;
   }
-}
-
-.e-title {
-  display: flex;
-  flex-grow: 1;
-  justify-content: center;
-  width: 75%;
-}
-.dj_name {
-  font-size: 1.25em;
-  color: rgb(255, 29, 141);
+  .e-title {
+    margin-top: -5vw;
+    align-self: center;
+    vertical-align: top;
+    text-align: center;
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    width: 100%;
+    .dj_name {
+      align-self: center;
+      display: block;
+      width: 100%;
+      font-size: 5vw;
+      color: rgb(255, 29, 141);
+    }
+  }
 }
