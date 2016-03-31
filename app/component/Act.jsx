@@ -30,9 +30,11 @@ export default(props, context) => {
       <Time time={time.end}/>
     </div>
     <div className="e-title">
+      <FitText>
       <span className="dj_name">
         {time.dj}
       </span>
+      </FitText>
     </div>
     <div></div>
   </div>;
