@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import Stage from './Stage.jsx';
 import _ from 'underscore';
 import Moment from 'moment';
+
 export default class Schedule extends React.Component {
 
   constructor(props) {
@@ -43,8 +44,11 @@ export default class Schedule extends React.Component {
       }));
     }));
 
-    const length = Moment.duration(Moment(end).diff(start)).asMinutes();
+    const length =
+      Moment
+      .duration(Moment(end).diff(start)).asMinutes();
     console.log(`Event starts at: ${Moment(start).format()} ends at ${Moment(end).format()} with a total length of ${length} minutes`);
+
     return (
       <div ref="schedule" className="schedule">
         {stages.map((stage) => {

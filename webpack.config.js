@@ -31,6 +31,9 @@ const common = {
       test: /\.jsx?$/,
       loaders: ['babel?cacheDirectory'],
       include: PATHS.app
+    },{
+      test: /\.less$/,
+      loader: "style!css!less"
     }]
   }
 };

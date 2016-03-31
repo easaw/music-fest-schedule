@@ -1,12 +1,14 @@
 import React from 'react';
-import dateFormat from '../formatters/date.js';
+import Time from './time.jsx';
+import FitText from 'react-fittext';
 
-export default (props, context) => {
+export default(props, context) => {
+  const styles = {width: "100%"};
   return (
     <div className="time-container">
-      <span className="time">
-        { dateFormat(props.time)}
-      </span>
-      </div>
+      <FitText>
+        <Time styles={styles} time={props.time}/>
+      </FitText>
+    </div>
   );
 };

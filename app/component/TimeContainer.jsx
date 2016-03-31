@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import Moment from 'moment';
-import Time from './Time.jsx';
+import Act from './Act.jsx';
 
 export default class TimeContainer extends React.Component {
 
@@ -25,7 +25,7 @@ export default class TimeContainer extends React.Component {
     return (
       <div className="time-container" style={timeContainer}>
         {times.map((time) => {
-          return (<Time
+          return (<Act
             key={time.id}
             time={time}
             startTime={startTime}
