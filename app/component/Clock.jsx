@@ -1,6 +1,5 @@
 import React from 'react';
 import Time from './Time.jsx';
-import ReactFitText from 'react-fittext';
 
 export default class Clock extends React.Component {
 

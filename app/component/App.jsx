@@ -19,11 +19,11 @@ export default class App extends React.Component {
 
   setTime = (time) => {
     this.setState({currentTime: time});
-    this.timeoutIds.push(window.setTimeout(this.setTime(Date.now()), 10));
+    this.timeoutIds.push(window.setTimeout(this.setTime(Date.now()), 500));
   }
 
   componentDidMount() {
-    this.timeoutIds.push(window.setTimeout(this.setTime(Date.now()), 10));
+    this.timeoutIds.push(window.setTimeout(this.setTime(Date.now()), 500));
   }
 
   handleEditClick = (e) => {
