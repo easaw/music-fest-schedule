@@ -14,22 +14,25 @@ export default class TimeContainer extends React.Component {
     const times = stage.times.sort((a,b)=> {
       return Moment(a).isBefore(b);
     });
-    const timeContainer = {
-      height: '100%',
-      position: 'relative'
-    };
 
-    var pxPerQuarterMin =  15 * height / totalMinutes;
-    console.log(`Total pxPerQuarterMin = ${pxPerQuarterMin}`);
+    const minutesToPixels = (min) =>  {
+      debugger;
+      return min * (totalMinutes /  height);
+    }
+
 
     return (
-      <div className="time-container" style={timeContainer}>
+      <div className="time-container" >
         {times.map((time) => {
+
+          const top =  minutesToPixels( Moment.duration(Moment(time.start).diff(Moment(startTime))).asMinutes() );
+          const height = minutesToPixels(  Moment.duration(Moment(time.end).diff(Moment(time.start))).asMinutes()   );
+
           return (<Act
             key={time.id}
             time={time}
-            startTime={startTime}
-            pxPerQuarterMin={pxPerQuarterMin}
+            height={height}
+            top={top}
             />);
 
         })

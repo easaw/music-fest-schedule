@@ -9,38 +9,16 @@ export default class Schedule extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      height: "400px",
-      stageNameSize: "20px"
+      height: "400"
     };
-    this.stageIds = [];
   }
 
   handleResize = () => {
     const scheduleHeight = this.refs.schedule.offsetHeight;
-
-
-    const stageComponents = this.stageIds.map((s)=> {
-      return ReactDOM.findDOMNode(this.refs[s]);
-    });
-
-    const stageTitles =  stageComponents.map((sc) => {
-      return sc.children[0];
-    });
-
-    const size =  stageTitles.map((st) =>{
-      return st.offsetWidth;
-    });
-
-    const stageNameSize = Math.min(...size);
-
+    debugger;
     this.setState({
       height: scheduleHeight,
-      stageNameSize: stageNameSize
     });
-
-
-    debugger;
-
   };
 
   componentDidMount() {
@@ -77,11 +55,7 @@ export default class Schedule extends React.Component {
     return (
       <div ref="schedule" className="schedule">
         {stages.map((stage,index) => {
-          let ref = `state-${index++}`;
-          this.stageIds.push(ref);
-
           return <Stage
-            ref={ref}
             stageNameSize={stageNameSize}
             key={stage.id}
             height={height}

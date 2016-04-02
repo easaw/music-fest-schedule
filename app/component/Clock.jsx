@@ -9,14 +9,9 @@ export default class Clock extends React.Component {
 
   render() {
     const time = this.props.time;
-    const styles = {
-      fontSize: "19.5vh",
-      width: "100%",
-      textAlign: "center"
-    };
     return (
-      <div className="time-container">
-        <Time styles={styles} time={time}/>
+      <div className="clock">
+        <Time time={time}/>
       </div>
     );
   }
