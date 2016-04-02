@@ -11,11 +11,10 @@ export default class Act extends React.Component {
 
   render() {
     const time = this.props.time;
-
     const startTime = this.props.startTime;
-    const height = this.props.height;
-    const top = this.props.top;
-
+    const pxPerQuarterMin = this.props.pxPerQuarterMin;
+    const top = Moment.duration(Moment(time.start).diff(Moment(startTime))).asMinutes() / 15 * pxPerQuarterMin;
+    const length = Moment.duration(Moment(time.end).diff(Moment(time.start))).asMinutes() / 15 * pxPerQuarterMin;
 
     const style = {
       height: `${length}px`,
@@ -35,7 +34,6 @@ export default class Act extends React.Component {
             {time.dj}
           </span>
       </div>
-      <div></div>
     </div>;
   }
 }

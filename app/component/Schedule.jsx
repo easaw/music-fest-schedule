@@ -15,7 +15,6 @@ export default class Schedule extends React.Component {
 
   handleResize = () => {
     const scheduleHeight = this.refs.schedule.offsetHeight;
-    debugger;
     this.setState({
       height: scheduleHeight,
     });
