@@ -5,6 +5,11 @@ import Moment from 'moment';
 
 export default class Act extends React.Component
 {
+    constructor(props){
+      super(props);
+    }
+
+
     render() {
         const time = this.props.time;
         const height = this.props.height;
@@ -16,14 +21,17 @@ export default class Act extends React.Component
             width: "100%"
         };
 
-        return <div className="act" style={style}>
-            <div className="time">
-                <Time time={time.start}/>
-                -
-                <Time time={time.end}/>
 
+
+        return <div className="act" style={style} >
+            <div className="time-container" >
+              <div className="time">
+                  <Time time={time.start}/>
+                  -
+                  <Time time={time.end}/>
+                </div>
             </div>
-            <div className="e-title">
+            <div className="e-title" >
                 <span className="dj_name">
                     {time.dj}
                 </span>

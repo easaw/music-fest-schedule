@@ -5,11 +5,6 @@ import Moment from 'moment';
 
 export default class Stage extends React.Component {
 
-  constructor(props){
-    super(props);
-
-  }
-
   render() {
     const totalMinutes = this.props.totalMinutes;
     const stage = this.props.stage;

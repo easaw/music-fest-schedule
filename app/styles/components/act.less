@@ -1,32 +1,34 @@
 .act {
-  display: flex;
-  flex-direction: column;
-  border-top-color: rgb(255, 255, 255);
-  border-top-style: solid;
-  border-top-width: 0.5vw;
-  min-height: 4em;
-  position: absolute;
-  top: 0;
-  & > .time {
-    border-top-color: rgb(255, 29, 141);
+    display: flex;
+    flex-direction: column;
+    border-top-color: rgb(255, 255, 255);
     border-top-style: solid;
-    border-top-width: 1vw;
-    padding-top: 1vw;
-    display: flex;
-    justify-content: start;
-  }
-  .e-title {
-    align-self: center;
-    vertical-align: top;
-    text-align: center;
-    display: flex;
-    flex-grow: 1;
-    justify-content: center;
-    width: 100%;
-    .dj_name {
-      align-self: center;
-      display: block;
-      width: 100%;
+    border-top-width: 0.5vw;
+    min-height: 4em;
+    position: absolute;
+    top: 0;
+    .time-container {
+        display: flex;
+        justify-content: start;
+        div.time {
+            border-top-color: rgb(255, 29, 141);
+            border-top-style: solid;
+            border-top-width: 1vw;
+            padding-top: 1vw;
+        }
     }
-  }
+    .e-title {
+        align-self: center;
+        vertical-align: top;
+        text-align: center;
+        display: flex;
+        flex-grow: 1;
+        justify-content: center;
+        width: 100%;
+        .dj_name {
+            align-self: center;
+            display: block;
+            width: 100%;
+        }
+    }
 }
