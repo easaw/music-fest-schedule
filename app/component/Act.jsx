@@ -3,37 +3,31 @@ import ReactDom from 'react-dom';
 import Time from './Time.jsx'
 import Moment from 'moment';
 
-export default class Act extends React.Component {
+export default class Act extends React.Component
+{
+    render() {
+        const time = this.props.time;
+        const height = this.props.height;
+        const top = this.props.top;
 
-  constructor(props) {
-    super(props);
-  }
+        const style = {
+            height: `${height}px`,
+            top: `${top}px`,
+            width: "100%"
+        };
 
-  render() {
-    const time = this.props.time;
-    const startTime = this.props.startTime;
-    const pxPerQuarterMin = this.props.pxPerQuarterMin;
-    const top = Moment.duration(Moment(time.start).diff(Moment(startTime))).asMinutes() / 15 * pxPerQuarterMin;
-    const length = Moment.duration(Moment(time.end).diff(Moment(time.start))).asMinutes() / 15 * pxPerQuarterMin;
+        return <div className="act" style={style}>
+            <div className="time">
+                <Time time={time.start}/>
+                -
+                <Time time={time.end}/>
 
-    const style = {
-      height: `${length}px`,
-      top: `${top}px`,
-      width: "100%"
-    };
-
-    return <div className="act" style={style}>
-      <div className="time">
-          <Time time={time.start}/>
-          -
-          <Time time={time.end}/>
-
-      </div>
-      <div className="e-title" ref="title">
-          <span className="dj_name">
-            {time.dj}
-          </span>
-      </div>
-    </div>;
-  }
+            </div>
+            <div className="e-title">
+                <span className="dj_name">
+                    {time.dj}
+                </span>
+            </div>
+        </div>;
+    }
 }

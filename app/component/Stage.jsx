@@ -3,21 +3,24 @@ import ReactDom from 'react-dom';
 import Acts from './Acts.jsx';
 import Moment from 'moment';
 
-export default class Schedule extends React.Component {
+export default class Stage extends React.Component {
+
+  constructor(props){
+    super(props);
+
+  }
 
   render() {
     const totalMinutes = this.props.totalMinutes;
     const stage = this.props.stage;
     const startTime = this.props.startTime;
-    const height = this.props.height;
     return (
       <div className="stage">
-          <div className="day" >
+          <div className="day" refs="day" >
             {stage.name}
           </div>
         <Acts
           startTime={startTime}
-          height={height}
           totalMinutes={totalMinutes}
           stage={stage}
         />
