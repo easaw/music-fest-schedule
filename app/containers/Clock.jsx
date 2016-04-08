@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import Clock from '../component/Clock.jsx';
-import _ from 'underscore';
+import _ from 'lodash';
 import Moment from 'moment';
 
 const mapStateToProps = (state) => {

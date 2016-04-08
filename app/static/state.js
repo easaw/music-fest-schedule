@@ -7,11 +7,9 @@ import {
 
 
 export default () => {
-    debugger;
     let results = normalize(result, {
         stages: arrayOf(stage)
     });
-    debugger;
     let state = Object.assign({}, {
         stages: results.entities.stages,
         acts: results.entities.acts

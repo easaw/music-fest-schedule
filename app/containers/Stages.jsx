@@ -1,15 +1,28 @@
 import { connect } from 'react-redux';
 import Stages from '../component/Stages.jsx';
-import _ from 'underscore';
+import _ from 'lodash';
 import Moment from 'moment';
 
 const mapStateToProps = (state) => {
-  debugger;
-    const start = _.min(state.acts, (a) => {a.start});
-    const end = _.max(state.acts, (a) => {a.end});
-    //const length = Moment(end).diff(Moment(start)).asMinutes();
+    const start = _.chain(state.acts)
+          .map()
+          .minBy('start')
+          .value()
+          .start;
+    const end = _.chain(state.acts)
+          .map()
+          .maxBy('end')
+          .value()
+          .end;
+
+    debugger;
+    var m = Moment;
+    const length = (start && end) ? Moment.duration(Moment(end).diff(Moment(start))).asMinutes() : 0;
+
+    const stages = _.map(state.stages);
+
     return {
-      stages: state.stages,
+      stages: stages,
       time: state.time,
       start: start,
       end: end,

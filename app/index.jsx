@@ -8,9 +8,7 @@ import App from './component/App.jsx';
 import State from './static/state.js';
 
 const state = State();
-debugger;
 let store = createStore(scheduleApp, state);
-
 render(
     <Provider store={store}>
       <App/>
