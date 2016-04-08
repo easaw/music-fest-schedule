@@ -1,6 +1,16 @@
 import './styles/main.less';
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
+import { createStore } from 'redux'
+import { Provider } from 'react-redux';
+import scheduleApp from './reducers/index.js';
 import App from './component/App.jsx';
 
-ReactDOM.render(<App />, document.getElementById('app'));
+let store = createStore(scheduleApp);
+
+render(
+    <Provider store={store}>
+      <App/>
+    </Provider>,
+document.getElementById('app')
+);

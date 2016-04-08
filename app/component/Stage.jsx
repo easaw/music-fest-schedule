@@ -4,7 +4,6 @@ import Acts from './Acts.jsx';
 import Moment from 'moment';
 
 export default class Stage extends React.Component {
-
   render() {
     const totalMinutes = this.props.totalMinutes;
     const stage = this.props.stage;
@@ -17,7 +16,7 @@ export default class Stage extends React.Component {
         <Acts
           startTime={startTime}
           totalMinutes={totalMinutes}
-          stage={stage}
+          acts={acts}
         />
       </div>
     );

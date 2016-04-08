@@ -5,34 +5,60 @@ import Moment from 'moment';
 
 export default class Act extends React.Component
 {
-    constructor(props){
-      super(props);
+    constructor(props) {
+        super(props);
+        this.state = {
+            djNameTextSize: 50
+        };
     }
 
+    calculateFontSize = () => {
+        const djNameTextSize = this.state.djNameTextSize;
+        const djName = this.refs.djName;
+        const title = this.refs.title;
+
+        if (djName.offsetHeight >= title.offsetHeight || djName.offsetHeight < title.offsetHeight * .80) {
+            let djNameTextSize = 0;
+            djNameTextSize = title.offsetWidth / 10;
+            this.setState({djNameTextSize: djNameTextSize});
+        }
+
+    };
+
+    componentDidMount = () => {npm
+        this.calculateFontSize();
+    };
+
+    componentWillReceiveProps = () => {
+      this.calculateFontSize();
+    };
 
     render() {
-        const time = this.props.time;
-        const height = this.props.height;
-        const top = this.props.top;
+        const time = this.props.time,
+            height = this.props.height,
+            top = this.props.top,
+            djNameTextSize = this.state.djNameTextSize;
 
-        const style = {
+        const actStyle = {
             height: `${height}px`,
             top: `${top}px`,
             width: "100%"
         };
 
+        const djNameStyle = {
+            fontSize: djNameTextSize
+        }
 
-
-        return <div className="act" style={style} >
-            <div className="time-container" >
-              <div className="time">
-                  <Time time={time.start}/>
-                  -
-                  <Time time={time.end}/>
+        return <div className="act" style={actStyle} ref="act">
+            <div className="time-container" ref="timeContainer">
+                <div className="time">
+                    <Time time={time.start}/>
+                    -
+                    <Time time={time.end}/>
                 </div>
             </div>
-            <div className="e-title" >
-                <span className="dj_name">
+            <div className="e-title" ref="title">
+                <span className="dj_name" style={djNameStyle} ref="djName">
                     {time.dj}
                 </span>
             </div>
