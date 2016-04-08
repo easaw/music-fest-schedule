@@ -5,8 +5,11 @@ import { createStore } from 'redux'
 import { Provider } from 'react-redux';
 import scheduleApp from './reducers/index.js';
 import App from './component/App.jsx';
+import State from './static/state.js';
 
-let store = createStore(scheduleApp);
+const state = State();
+debugger;
+let store = createStore(scheduleApp, state);
 
 render(
     <Provider store={store}>

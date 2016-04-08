@@ -7,22 +7,30 @@ import {
 
 
 export default () => {
-    let results = normalize(result, scheduleSchema);
-    return results;
+    debugger;
+    let results = normalize(result, {
+        stages: arrayOf(stage)
+    });
+    debugger;
+    let state = Object.assign({}, {
+        stages: results.entities.stages,
+        acts: results.entities.acts
+    });
+    return state;
 };
 
-const actSchema = new Schema('acts', {
+const act = new Schema('acts', {
     idAttribue: 'id'
 });
 
-const stageSchema = new Schema('stages', {
-    idAttribue: 'id',
-    acts: arrayOf(actSchema)
+const stage = new Schema('stages', {
+    idAttribue: 'id'
 });
 
-const scheduleSchema = new Schema('schedule', {
-    stages: arrayOf(stageSchema)
+stage.define({
+    acts: arrayOf(act)
 });
+
 
 
 
