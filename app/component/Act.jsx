@@ -25,7 +25,7 @@ export default class Act extends React.Component
 
     };
 
-    componentDidMount = () => {npm
+    componentDidMount = () => {
         this.calculateFontSize();
     };
 
@@ -34,10 +34,8 @@ export default class Act extends React.Component
     };
 
     render() {
-        const time = this.props.time,
-            height = this.props.height,
-            top = this.props.top,
-            djNameTextSize = this.state.djNameTextSize;
+        const {act, height, top } = this.props;
+        const { djNameTextSize } = this.state;
 
         const actStyle = {
             height: `${height}px`,
@@ -52,14 +50,14 @@ export default class Act extends React.Component
         return <div className="act" style={actStyle} ref="act">
             <div className="time-container" ref="timeContainer">
                 <div className="time">
-                    <Time time={time.start}/>
+                    <Time time={act.start}/>
                     -
-                    <Time time={time.end}/>
+                    <Time time={act.end}/>
                 </div>
             </div>
             <div className="e-title" ref="title">
                 <span className="dj_name" style={djNameStyle} ref="djName">
-                    {time.dj}
+                    {act.dj}
                 </span>
             </div>
         </div>;

@@ -11,8 +11,15 @@ const act = (state = defaultState, action) => {
     }
 };
 
-const acts = (state = defaultState, action) => {
+const acts = (state = {
+    acts: [],
+    height: 0
+}, action) => {
     switch (action.type) {
+        case 'RESIZE':
+            return Object.assign({}, state, {
+                height: action.newSize
+            });
         case 'ADD_ACT':
             return [
                 ...state.stages,
@@ -20,8 +27,8 @@ const acts = (state = defaultState, action) => {
             ]
         case 'DELETE_ACT':
             return state.acts.filter(
-                (stage) => {
-                    return stage.id != action.id;
+                (act) => {
+                    return act.id != action.id;
                 }
             );
         default:

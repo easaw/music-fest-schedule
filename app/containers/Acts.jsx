@@ -1,21 +1,23 @@
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux'
 import Stages from '../component/Acts.jsx';
+import { resize } from '../actions/index.js';
 import _ from 'lodash';
 import Moment from 'moment';
 
 const mapStateToProps = (state) => {
     return {
-      stages: stages,
-      time: state.time,
-      start: start,
-      end: end,
-      length: length
+      acts: _.chain(state.acts).map().orderBy('start').value()
     };
 };
 
-const StageContainer = connect(
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreator({resize}, dispatch);
+};
+
+const ActsContainer = connect(
   mapStateToProps,
   null,
 )(Stages)
 
-export default StageContainer;
+export default ActsContainer;
