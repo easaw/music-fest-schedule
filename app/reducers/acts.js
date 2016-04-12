@@ -1,4 +1,4 @@
-import defaultState from '../static/state.js'
+import defaultState from '../static/state.js';
 const act = (state = defaultState, action) => {
     switch (action.type) {
         case 'ADD_ACT':
@@ -34,6 +34,6 @@ const acts = (state = {
         default:
             return state;
     }
-}
+};
 
 export default acts;

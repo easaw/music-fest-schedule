@@ -7,11 +7,10 @@ export default class Acts extends React.Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            height: 0
+        };
     }
-
-    minutesToPixels = (min) => {
-        return min * (this.state.height / this.props.totalMinutes);
-    };
 
     componentDidMount() {
         window.addEventListener('resize', this.handleResize);
@@ -25,12 +24,13 @@ export default class Acts extends React.Component {
     };
 
     render() {
-      const acts = this.props.acts;
+        const acts = this.props.acts;
+        const height = this.state.height;
         return (
             <div className="acts">
                 {acts.map((a) => {
-                    return (<Act key={a.id} act={a}  />);
-                },this)}
+                    return (<Act key={a.id} act={a} height={height}/>);
+                }, this)}
             </div>
         );
     }

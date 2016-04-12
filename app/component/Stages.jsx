@@ -7,7 +7,7 @@ export default class Stages extends React.Component {
         return (
             <div ref="schedule" className="schedule">
                 {stages.map((stage) => {
-                    return <Stage key={stage.id} name={stage.name} startTime={start} totalMinutes={length}/>;
+                    return <Stage key={stage.id} name={stage.name} startTime={start} id={stage.id} totalMinutes={length}/>;
                 })}
             </div>
         );
