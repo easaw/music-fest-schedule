@@ -19,7 +19,6 @@ export default class Acts extends React.Component {
     }
 
     handleResize = () => {
-        debugger;
         const thisNode = ReactDom.findDOMNode(this);
         const thisHeight = thisNode.offsetHeight;
         this.setState({height: thisHeight});

@@ -1,16 +1,31 @@
-body {
+@import 'responsive.less';
+
+// Mixin
+.responsive( @minWidth; @maxWidth; @rules) {
+    @media only screen and (max-width: @maxWidth)
+    and (min-width: @minWidth ){
+        @rules();
+    }
+}
+
+
+html {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    .responsive(320px, 480px, {   font-size: 54px;});
     font-size: 10px;
 }
 .day {
-    font-size: 3.2rem;
+    font-size: 1rem;
+    /*font-size: 3.2rem;*/
     font-weight: 600;
     letter-spacing: 0.3em;
     text-transform: uppercase;
 }
 .clock {
     .time {
-        font-size: 23rem;
+        font-size: 6rem;
+/*       font-size: 23rem; */
+        letter-spacing: 0.1em;
         vertical-align: bottom;
         align-content: center;
         align-self: flex-end;

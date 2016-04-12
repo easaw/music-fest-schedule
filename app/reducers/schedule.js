@@ -1,5 +1,5 @@
 
-const stage = (state {height: 0} , action) => {
+const resize = (state {height: 0} , action) => {
     switch (action.type) {
         case 'RESIZE':
             return {

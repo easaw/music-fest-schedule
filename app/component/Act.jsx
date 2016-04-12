@@ -10,7 +10,7 @@ export default class Act extends React.Component
         this.state = {
             djNameTextSize: 50
         };
-    }
+    };
 
     calculateFontSize = () => {
         const djNameTextSize = this.state.djNameTextSize;
@@ -61,5 +61,5 @@ export default class Act extends React.Component
                 </span>
             </div>
         </div>;
-    }
+    };
 }

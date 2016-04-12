@@ -15,7 +15,6 @@ const mapStateToProps = (state) => {
           .value()
           .end;
 
-    debugger;
     var m = Moment;
     const length = (start && end) ? Moment.duration(Moment(end).diff(Moment(start))).asMinutes() : 0;
 
