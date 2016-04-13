@@ -1,11 +1,11 @@
-import defaultState from '../static/state.js'
-const time = (state = defaultState, action) => {
+const time = (state = Date.now(), action) => {
+    debugger;
     switch (action.type) {
-        case 'TICK':
-            return object.assign({}, state, {
-                time: date.now()
-            });
+        case 'TIME_TICK':
+          return Date.now();
         default:
-            return state.time;
+            return state;
     }
 };
+
+export default time;

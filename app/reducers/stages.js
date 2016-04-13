@@ -1,18 +1,16 @@
-import defaultState from '../static/state.js'
-
-const stage = (state = defaultState, action) => {
+const stage = (state = {stages:[]}, action) => {
     switch (action.type) {
         case 'ADD_STAGE':
             return {
                 id: action.id,
                 name: action.name
-            }
+            };
         default:
             return state;
     }
 };
 
-const stages = (state = defaultState, action) => {
+const stages = (state  = {stages:[]}, action) => {
     switch (action.type) {
         case 'ADD_STAGE':
             return [

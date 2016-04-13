@@ -12,7 +12,8 @@ export default () => {
     });
     let state = Object.assign({}, {
         stages: results.entities.stages,
-        acts: results.entities.acts
+        acts: results.entities.acts,
+        time: Date.now()
     });
     return state;
 };

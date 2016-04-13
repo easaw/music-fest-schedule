@@ -7,6 +7,12 @@ export default class Clock extends React.Component {
         super(props);
     }
 
+    componentDidMount() {
+        window.setInterval(() => {
+            this.props.onTick(Date.now());
+        }, 60000);
+    }
+
     render() {
         const time = this.props.time;
         return (

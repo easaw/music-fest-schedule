@@ -1,5 +1,5 @@
 
-const resize = (state {height: 0} , action) => {
+const resize = (state, action) => {
     switch (action.type) {
         case 'RESIZE':
             return {
