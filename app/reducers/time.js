@@ -1,5 +1,4 @@
 const time = (state = Date.now(), action) => {
-    debugger;
     switch (action.type) {
         case 'TIME_TICK':
           return Date.now();

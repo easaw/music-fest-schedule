@@ -13,15 +13,16 @@ export default class Act extends React.Component
     };
 
     calculateFontSize = () => {
-        const djNameTextSize = this.state.djNameTextSize;
+        let djNameTextSize = this.state.djNameTextSize;
         const djName = this.refs.djName;
         const title = this.refs.title;
+        debugger;
 
-        if (djName.offsetHeight >= title.offsetHeight || djName.offsetHeight < title.offsetHeight * .80) {
-            let djNameTextSize = 0;
-            djNameTextSize = title.offsetWidth / 10;
+        if (djName.offsetHeight >= title.offsetHeight ||
+            djName.offsetHeight < title.offsetHeight * .80) {
+            djNameTextSize = title.offsetWidth / 8.5; // Magic number I just guessed
             this.setState({djNameTextSize: djNameTextSize});
-        }
+       }
 
     };
 
