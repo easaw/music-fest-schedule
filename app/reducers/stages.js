@@ -1,4 +1,6 @@
-const stage = (state = {stages:[]}, action) => {
+const stage = (state = {
+    stages: []
+}, action) => {
     switch (action.type) {
         case 'ADD_STAGE':
             return {
@@ -10,13 +12,15 @@ const stage = (state = {stages:[]}, action) => {
     }
 };
 
-const stages = (state  = {stages:[]}, action) => {
+const stages = (state = {
+    stages: []
+}, action) => {
     switch (action.type) {
         case 'ADD_STAGE':
             return [
                 ...state.stages,
                 stage(undefined, action)
-            ]
+            ];
         case 'DELETE_STAGE':
             return state.stages.filter(
                 (stage) => {
@@ -26,6 +30,6 @@ const stages = (state  = {stages:[]}, action) => {
         default:
             return state;
     }
-}
+};
 
 export default stages;

@@ -4,9 +4,9 @@ module.exports = {
         "commonjs": true,
         "es6": true
     },
-    "extends": "eslint:recommended",
+    "parser":"babel-eslint",
     "parserOptions": {
-      "ecmaVersion": 6,
+        "ecmaVersion": 6,
         "ecmaFeatures": {
             "experimentalObjectRestSpread": true,
             "jsx": true
@@ -16,11 +16,8 @@ module.exports = {
     "plugins": [
         "react"
     ],
+    extends: ["plugin:react/recommended","eslint:recommended",],
     "rules": {
-        "indent": [
-            "error",
-            4
-        ],
         "linebreak-style": [
             "error",
             "windows"
@@ -39,10 +36,6 @@ module.exports = {
         "no-underscore-dangle": 0,
         "no-use-before-define": 0,
         "eol-last": 0,
-        "quotes": [2, "single"],
-        "jsx-quotes": 1,
-        "react/jsx-no-undef": 1,
-        "react/jsx-uses-react": 1,
-        "react/jsx-uses-vars": 1
+        "quotes": [2, "single"]
     }
 };
