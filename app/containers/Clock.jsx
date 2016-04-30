@@ -2,7 +2,6 @@ import {connect} from 'react-redux';
 import Clock from '../component/Clock.jsx';
 
 const mapStateToProps = (state) => {
-    debugger;
     return {time: state.time};
 };
 
