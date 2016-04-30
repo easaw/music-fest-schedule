@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import Time from './Time.jsx'
+import Time from './Time.jsx';
 import Moment from 'moment';
 
 export default class Act extends React.Component
@@ -10,7 +10,7 @@ export default class Act extends React.Component
         this.state = {
             djNameTextSize: 50
         };
-    };
+    }
 
     calculateFontSize = () => {
         const djNameTextSize = this.state.djNameTextSize;
@@ -40,12 +40,12 @@ export default class Act extends React.Component
         const actStyle = {
             height: `${height}px`,
             top: `${top}px`,
-            width: "100%"
+            width: '100%'
         };
 
         const djNameStyle = {
             fontSize: djNameTextSize
-        }
+        };
 
         return <div className="act" style={actStyle} ref="act">
             <div className="time-container" ref="timeContainer">
@@ -61,5 +61,5 @@ export default class Act extends React.Component
                 </span>
             </div>
         </div>;
-    };
+    }
 }

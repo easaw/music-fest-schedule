@@ -46,6 +46,8 @@
     "react": "^15.0.0",
     "react-dom": "^15.0.0",
     "react-redux": "^4.4.1",
+    "react-router": "^2.4.0",
+    "react-router-redux": "^4.0.4",
     "redux": "^3.3.1",
     "stage": "^0.9.0"
   }

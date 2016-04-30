@@ -1,17 +1,29 @@
 import './styles/main.less';
 import React from 'react';
 import {render} from 'react-dom';
-import {createStore} from 'redux'
+import {createStore, combineReducers, applyMiddleware } from 'redux';
 import {Provider} from 'react-redux';
-import scheduleApp from './reducers/index.js';
+import { Router, Route, browserHistory } from 'react-router'
+import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
+import reducers from './reducers/index.js';
 import App from './component/App.jsx';
 import State from './static/state.js';
 
 const state = State();
-let store = createStore(scheduleApp, state, window.devToolsExtension
+const store = createStore(
+    combineReducers({ 
+        ...reducers, 
+        routing: routerReducer
+    }), 
+    state, 
+    window.devToolsExtension
     ? window.devToolsExtension()
     : undefined);
+const history = syncHistoryWithStore(browserHistory,  store);
+
 render(
     <Provider store={store}>
-    <App/>
+        <Router history={history}>
+            <Route path="/" component={App} />
+        </Router>
 </Provider>, document.getElementById('app'));
