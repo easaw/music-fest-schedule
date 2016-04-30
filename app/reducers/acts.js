@@ -5,7 +5,7 @@ const act = (state = defaultState, action) => {
             return {
                 id: action.id,
                 name: action.name
-            }
+            };
         default:
             return state;
     }
@@ -24,7 +24,7 @@ const acts = (state = {
             return [
                 ...state.stages,
                 act(undefined, action)
-            ]
+            ];
         case 'DELETE_ACT':
             return state.acts.filter(
                 (act) => {

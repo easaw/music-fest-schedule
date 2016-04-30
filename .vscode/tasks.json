@@ -1,0 +1,12 @@
+{
+  "version": "0.1.0",
+  "command": "npm",
+  "isShellCommand": true,
+  "showOutput": "always",
+  "args": ["run"],
+  "isWatching": false,
+  "tasks": [
+    { "taskName": "build" },
+    { "taskName": "start"},
+    { "taskName": "lint"},
+  ]
