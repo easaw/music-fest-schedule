@@ -1,7 +1,7 @@
 import {connect} from 'react-redux';
 import Stages from '../component/Act.jsx';
 import _ from 'lodash';
-import { timeToPixels, timeDifference } from '../helpers';
+import { timeToPixels, timeDifference } from '../../../helpers';
 
 const mapStateToProps = (state, ownProps) => {
     const act = _.find(state.acts, {id: ownProps.act.id});
