@@ -7,9 +7,20 @@ export default class Clock extends React.Component {
         super(props);
     }
 
+    static propTypes = {
+        onTick: React.propTypes.func,
+        time: React.propTypes.object
+    }
+
+    static defaultProps = {
+        time: Date.now()
+    }
+
     componentDidMount() {
         window.setInterval(() => {
-            this.props.onTick(Date.now());
+            this
+                .props
+                .onTick(Date.now());
         }, 60000);
     }
 

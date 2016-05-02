@@ -1,7 +1,5 @@
 import React from 'react';
-import ReactDom from 'react-dom';
 import Time from './Time.jsx';
-import Moment from 'moment';
 
 export default class Act extends React.Component
 {
@@ -12,17 +10,27 @@ export default class Act extends React.Component
         };
     }
 
+    static propTypes = {
+        act: React.propTypes.Object.isRequired,
+        height: React.propTypes.number.isRequired,
+        top: React.propTypes.top.isRequired
+    };
+
+    static defaultProps = {
+        act: {},
+        height: -1,
+        top: 900000000000000
+    };
+
     calculateFontSize = () => {
         let djNameTextSize = this.state.djNameTextSize;
         const djName = this.refs.djName;
         const title = this.refs.title;
-        debugger;
 
-        if (djName.offsetHeight >= title.offsetHeight ||
-            djName.offsetHeight < title.offsetHeight * .80) {
+        if (djName.offsetHeight >= title.offsetHeight || djName.offsetHeight < title.offsetHeight * .80) {
             djNameTextSize = title.offsetWidth / 8.5; // Magic number I just guessed
             this.setState({djNameTextSize: djNameTextSize});
-       }
+        }
 
     };
 
@@ -31,12 +39,12 @@ export default class Act extends React.Component
     };
 
     componentWillReceiveProps = () => {
-      this.calculateFontSize();
+        this.calculateFontSize();
     };
 
     render() {
-        const {act, height, top } = this.props;
-        const { djNameTextSize } = this.state;
+        const {act, height, top} = this.props;
+        const {djNameTextSize} = this.state;
 
         const actStyle = {
             height: `${height}px`,

@@ -1,8 +1,12 @@
 import React from 'react';
 export default class Controls extends React.Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
+    }
+
+    static propTypes = {
+        handleEditClick: React.propTypes.func
     }
 
     render() {

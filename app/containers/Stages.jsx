@@ -15,7 +15,6 @@ const mapStateToProps = (state) => {
           .value()
           .end;
 
-    var m = Moment;
     const length = (start && end) ? Moment.duration(Moment(end).diff(Moment(start))).asMinutes() : 0;
 
     const stages = _.map(state.stages);
@@ -31,7 +30,7 @@ const mapStateToProps = (state) => {
 
 const StageContainer = connect(
   mapStateToProps,
-  null,
-)(Stages)
+  null
+)(Stages);
 
 export default StageContainer;

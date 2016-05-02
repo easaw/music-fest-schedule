@@ -3,6 +3,11 @@ import Acts from '../containers/Acts.jsx';
 
 export default class Stage extends React.Component {
 
+    static propTypes = {
+        name: React.propTypes.string,
+        id: React.propTypes.object
+    };
+
     render() {
         const {name, id} = this.props;
         return (
@@ -10,7 +15,7 @@ export default class Stage extends React.Component {
                 <div className="day">
                     {name}
                 </div>
-                <Acts stageId={id} />
+                <Acts stageId={id}/>
             </div>
         );
     }

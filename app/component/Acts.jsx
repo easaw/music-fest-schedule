@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import Moment from 'moment';
 import Act from '../containers/Act.jsx';
 
 export default class Acts extends React.Component {
@@ -11,6 +10,10 @@ export default class Acts extends React.Component {
             height: 0
         };
     }
+
+    static propTypes = {
+        acts: React.propTypes.array
+    };
 
     componentDidMount() {
         window.addEventListener('resize', this.handleResize);

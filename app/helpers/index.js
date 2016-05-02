@@ -6,4 +6,4 @@ export const timeToPixels = (totalLength, pixelHeight) => {
 
 export const timeDifference = (start, end) => {
     return moment(new Date(end)).diff(moment(new Date(start)));
-}
+};
