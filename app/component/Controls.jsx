@@ -6,7 +6,7 @@ export default class Controls extends React.Component {
     }
 
     static propTypes = {
-        handleEditClick: React.propTypes.func
+        handleEditClick: React.PropTypes.func
     }
 
     render() {

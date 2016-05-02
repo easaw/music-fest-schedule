@@ -12,7 +12,7 @@ export default class Acts extends React.Component {
     }
 
     static propTypes = {
-        acts: React.propTypes.array
+        acts: React.PropTypes.array
     };
 
     componentDidMount() {

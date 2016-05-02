@@ -4,8 +4,8 @@ import Acts from '../containers/Acts.jsx';
 export default class Stage extends React.Component {
 
     static propTypes = {
-        name: React.propTypes.string,
-        id: React.propTypes.object
+        name: React.PropTypes.string,
+        id: React.PropTypes.object
     };
 
     render() {

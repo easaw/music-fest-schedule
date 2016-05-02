@@ -41,3 +41,6 @@ app/component/Clock.js
 app/containers/Act.js
 
 app/containers/Clock.js
+app/component/Act.js
+app/component/Stages.js
+app/index.js

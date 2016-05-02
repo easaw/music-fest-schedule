@@ -11,9 +11,9 @@ export default class Act extends React.Component
     }
 
     static propTypes = {
-        act: React.propTypes.Object.isRequired,
-        height: React.propTypes.number.isRequired,
-        top: React.propTypes.top.isRequired
+        act: React.PropTypes.object.isRequired,
+        height: React.PropTypes.number.isRequired,
+        top: React.PropTypes.number.isRequired
     };
 
     static defaultProps = {

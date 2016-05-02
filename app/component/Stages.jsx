@@ -4,9 +4,9 @@ import Stage from './Stage.jsx';
 export default class Stages extends React.Component {
 
     static propTypes = {
-        stages: React.propTypes.object,
-        start: React.propTypes.object,
-        length: React.propTypes.number
+        stages: React.PropTypes.array,
+        start: React.PropTypes.string,
+        length: React.PropTypes.id
     }
 
     render() {
