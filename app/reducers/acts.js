@@ -1,5 +1,4 @@
-import defaultState from '../static/state.js';
-const act = (state = defaultState, action) => {
+const act = (state, action) => {
     switch (action.type) {
         case 'ADD_ACT':
             return {

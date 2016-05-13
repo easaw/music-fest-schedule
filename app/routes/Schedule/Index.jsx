@@ -13,7 +13,6 @@ export default class Schedule extends React.Component {
 
     toggleEditingMode = () => {
         const currentState = this.state.isEditing;
-        console.log("toggleEditingMode");
         this.setState({
             isEditing: !currentState
         });

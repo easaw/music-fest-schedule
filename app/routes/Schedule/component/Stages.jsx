@@ -1,20 +1,33 @@
 import React from 'react';
-import Stage from './Stage.jsx';
+import Stage from '../containers/Stage.jsx';
 
 export default class Stages extends React.Component {
 
     static propTypes = {
         stages: React.PropTypes.array,
         start: React.PropTypes.string,
-        length: React.PropTypes.number
+        length: React.PropTypes.number,
+        isEditing: React.PropTypes.bool
     }
 
     render() {
-        const {stages, start, length} = this.props;
+        const {stages, start, length, isEditing} = this.props;
         return (
             <div ref="schedule" className="schedule">
+                {(() => {
+                    if (isEditing) {
+                        return <button>Add Stage</button>;
+                    }
+                })}
                 {stages.map((stage) => {
-                    return <Stage key={stage.id} name={stage.name} startTime={start} id={stage.id} totalMinutes={length}/>;
+                    return <Stage
+                      key={stage.id}
+                      name={stage.name}
+                      startTime={start}
+                      id={stage.id}
+                      isEditing={isEditing}
+                      totalMinutes={length}
+                      />;
                 })}
             </div>
         );

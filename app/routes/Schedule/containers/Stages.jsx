@@ -28,9 +28,19 @@ const mapStateToProps = (state) => {
     };
 };
 
-const StageContainer = connect(
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        addStage: () => {
+            dispatch({type: 'STAGE_ADD'});
+        }
+    };
+};
+
+
+const StagesContainer = connect(
   mapStateToProps,
-  null
+  mapDispatchToProps
 )(Stages);
 
-export default StageContainer;
+export default StagesContainer;

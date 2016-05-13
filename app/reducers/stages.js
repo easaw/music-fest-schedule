@@ -17,18 +17,39 @@ const stages = (state = {
 }, action) => {
     switch (action.type) {
         case 'ADD_STAGE':
-            return [
+            {
+                return [
                 ...state.stages,
                 stage(undefined, action)
             ];
+            }
         case 'DELETE_STAGE':
-            return state.stages.filter(
-                (stage) => {
-                    return stage.id != action.id;
-                }
-            );
+            {
+                return state.stages.filter(
+                    (stage) => {
+                        return stage.id != action.id;
+                    }
+                );
+            }
+        case 'RENAME_STAGE':
+            {
+                const {
+                    id,
+                    newName
+                } = action;
+                return state.stages.map((s) => {
+                    if (s.id === id) {
+                        s.name = newName;
+                        return s;
+                    } else {
+                        return s;
+                    }
+                });
+            }
         default:
-            return state;
+            {
+                return state;
+            }
     }
 };
 
