@@ -22,13 +22,14 @@ export default class Schedule extends React.Component {
     render() {
         const isEditing = this.state.isEditing;
         return (
-            <div className="app-container">
-                <TopBar
-                  isEditing={isEditing}
-                  onToggleEdit={this.toggleEditingMode}
-                  />
-                <Clock/>
-                <Stages isEditing={isEditing}/>
+            <div className="schedule-container">
+                <div className="top-portion">
+                    <TopBar isEditing={isEditing} onToggleEdit={this.toggleEditingMode}/>
+                    <Clock/>
+                </div>
+                <div className="bottom-portion">
+                    <Stages isEditing={isEditing}/>
+                </div>
             </div>
         );
     }
