@@ -1,25 +1,27 @@
 import React from 'react';
 
+export default class TopBar extends React.Component {
+    constructor(props) {
+        super(props);
+    };
 
-export default class Stages extends React.Component {
-  constructor(props){
-    super(props);
-  }
+    propTypes : {
+        isEditing: React.propTypes.bool
+    };
 
-  propTypes: {
-    isEditing: React.propTypes.bool
-  }
+    renderCancelEdit = () => {
+        return <span>Done</span>;
+    };
 
-  renderEdit: () => {
-    return <span>Edit</span>;
-  };
+    renderEdit = () => {
+        return <span>Edit</span>;
+    };
 
-  renderCancelEdit: () => {
-    return <span>Done</span>;
-  };
-
-  render(){
-    const isEditing = this.props.isEditing;
-    return isEditing ? renderCancelEdit : renderEdit;
-  }
+    render() {
+        const isEditing = this.props.isEditing;
+        debugger;
+        return isEditing
+            ? renderCancelEdit
+            : renderEdit;
+    }
 }
