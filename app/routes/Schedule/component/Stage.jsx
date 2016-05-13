@@ -5,7 +5,7 @@ export default class Stage extends React.Component {
 
     static propTypes = {
         name: React.PropTypes.string,
-        id: React.PropTypes.object
+        id: React.PropTypes.string
     };
 
     render() {

@@ -27,11 +27,12 @@
     "npm-install-webpack-plugin": "^2.0.2",
     "redux-devtools": "^3.1.1",
     "style-loader": "^0.13.0",
-    "webpack": "^1.12.14",
+    "webpack": "^1.13.0",
     "webpack-dev-server": "^1.14.1",
     "webpack-merge": "^0.7.3"
   },
   "dependencies": {
+    "babel-eslint": "^6.0.4",
     "expose-loader": "^0.7.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "jquery": "^2.2.2",

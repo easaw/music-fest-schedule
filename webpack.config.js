@@ -31,24 +31,35 @@ const common = {
     ],
     module: {
         loaders: [{
-            test: /\.css$/,
-            loaders: ['style', 'css'],
-            include: PATHS.app
-        }, {
-            test: /\.jsx?$/,
-            loader: "babel-loader",
-            include: PATHS.app
-        }, {
-            test: /\.js$/,
-            exclude: /node_modules/,
-            loader: "babel-loader"
-        }, {
-            test: /\.less$/,
-            loader: ExtractTextPlugin.extract(
-                // activate source maps via loader query
-                'css?sourceMap!' +
-                'less?sourceMap'
-            )
+                test: /\.css$/,
+                loaders: ['style', 'css'],
+                include: PATHS.app
+        },
+            {
+                test: /\.jsx?$/,
+                loader: 'babel-loader',
+                include: PATHS.app
+        },
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                loader: 'babel-loader'
+        },
+            {
+                test: /\.less$/,
+                loader: ExtractTextPlugin.extract(
+                    // activate source maps via loader query
+                    'css?sourceMap!' +
+                    'less?sourceMap'
+                )
+        },
+            {
+                test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+                loader: "url-loader?limit=10000&minetype=application/font-woff"
+        },
+            {
+                test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+                loader: "file-loader"
         }]
     },
     lessLoader: {
@@ -57,7 +68,7 @@ const common = {
                 advanced: true
             }),
             new LessPluginAutoPrefix({
-                browsers: ["last 2 versions"]
+                browsers: ['last 2 versions']
             })
         ]
     }

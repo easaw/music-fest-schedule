@@ -2,6 +2,16 @@ import React from 'react';
 
 export default class Act extends React.Component{
   render(){
-    return <span>Stage Screen</span>;
+    return (
+      <div className="stage-form">
+        <form action="">
+            <label htmlFor="stage-name">
+                Stage Name
+            </label>
+            <input type="text" id="stage-name"></input>
+
+        </form>
+      </div>
+    );
   }
 }

@@ -6,7 +6,7 @@ export default class Stages extends React.Component {
     static propTypes = {
         stages: React.PropTypes.array,
         start: React.PropTypes.string,
-        length: React.PropTypes.id
+        length: React.PropTypes.number
     }
 
     render() {
