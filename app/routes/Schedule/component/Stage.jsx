@@ -1,5 +1,6 @@
 import React from 'react';
 import Acts from '../containers/Acts.jsx';
+import  EditableText from './EditableText.jsx';
 
 export default class Stage extends React.Component {
 
@@ -20,16 +21,10 @@ export default class Stage extends React.Component {
         return (
             <div className="stage">
                 <div className="day">
-                    {(() => {
-                        if (isEditing) {
-                          return <input
-                            type="text"
-                            defaultValue={name}
-                            onChange={this.handleChange} />;
-                        } else {
-                          return  <span>{name}</span>;
-                        }
-                    })()}
+                    <EditableText
+                      isEditing={isEditing}
+                      handleChange={this.handleChange}
+                      text={name}  />
                 </div>
                 <Acts stageId={id}/>
             </div>
