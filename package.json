@@ -1,5 +1,5 @@
 {
-  "Private": true,
+  "private": true,
   "name": "music-fest-schedule",
   "version": "0.0.1",
   "description": "A schedule app",
