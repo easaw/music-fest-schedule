@@ -26,7 +26,7 @@ export default class Stage extends React.Component {
                       handleChange={this.handleChange}
                       text={name}  />
                 </div>
-                <Acts stageId={id}/>
+                <Acts stageId={id} isEditing={isEditing}/>
             </div>
         );
     }

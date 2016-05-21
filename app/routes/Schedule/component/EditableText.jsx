@@ -1,9 +1,10 @@
 import React from 'react';
 
-const EditableText =  ({isEditing, handleChange, text, className}) => {
+const EditableText =  ({isEditing, handleChange, text, className, styles}) => {
     if (isEditing) {
       return <input
-        className="className"
+        className={className}
+        styles={styles}
         type="text"
         defaultValue={text}
         onChange={handleChange} />;
@@ -12,5 +13,13 @@ const EditableText =  ({isEditing, handleChange, text, className}) => {
     }
 };
 
+
+EditableText.propTypes = {
+  isEditing: React.PropTypes.bool.isRequired,
+  handleChange: React.PropTypes.func.isRequired,
+  text: React.PropTypes.string.isRequired,
+  className: React.PropTypes.string,
+  styles: React.PropTypes.object
+};
 
 export default EditableText

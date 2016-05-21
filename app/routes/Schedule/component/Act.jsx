@@ -1,5 +1,6 @@
 import React from 'react';
 import Time from './Time.jsx';
+import EditableText from './EditableText.jsx';
 
 export default class Act extends React.Component
 {
@@ -43,7 +44,7 @@ export default class Act extends React.Component
     };
 
     render() {
-        const {act, height, top} = this.props;
+        const {act, height, top, isEditing} = this.props;
         const {djNameTextSize} = this.state;
 
         const actStyle = {
@@ -55,7 +56,6 @@ export default class Act extends React.Component
         const djNameStyle = {
             fontSize: djNameTextSize
         };
-
         return <div className="act" style={actStyle} ref="act">
             <div className="time-container" ref="timeContainer">
                 <div className="time">
@@ -66,7 +66,7 @@ export default class Act extends React.Component
             </div>
             <div className="e-title" ref="title">
                 <span className="dj_name" style={djNameStyle} ref="djName">
-                    {act.dj}
+                  <EditableText text={act.dj} isEditing={isEditing} handleChange={this.handleChange} />
                 </span>
             </div>
         </div>;
