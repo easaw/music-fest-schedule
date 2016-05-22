@@ -17,5 +17,14 @@ const mapStateToProps = (state, ownProps) => {
     return {act: ownProps.act, top: top, height: actHeight};
 };
 
-const ActContainer = connect(mapStateToProps, null)(Stages);
+const mapDispatchToProps = (dispatch, ownProps) => {
+    return {
+        changeActName: (newName) => {
+            dispatch({type: 'RENAME_ACT', id: ownProps.act.id, newName});
+        }
+    };
+};
+
+
+const ActContainer = connect(mapStateToProps, mapDispatchToProps, null)(Stages);
 export default ActContainer;

@@ -14,7 +14,8 @@ export default class Act extends React.Component
     static propTypes = {
         act: React.PropTypes.object.isRequired,
         height: React.PropTypes.number.isRequired,
-        top: React.PropTypes.number.isRequired
+        top: React.PropTypes.number.isRequired,
+        changeActName: React.PropTypes.func.isRequired
     };
 
     static defaultProps = {
@@ -41,6 +42,13 @@ export default class Act extends React.Component
 
     componentWillReceiveProps = () => {
         this.calculateFontSize();
+    };
+
+    handleChange = (event) => {
+      debugger;
+      let handleChange =  this.props.changeActName;
+      let newName = event.target.value;
+      handleChange(newName);
     };
 
     render() {

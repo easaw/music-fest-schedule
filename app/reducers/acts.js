@@ -30,6 +30,16 @@ const acts = (state = {
                     return act.id != action.id;
                 }
             );
+        case 'RENAME_ACT':
+          const acts = _.map(state, (a) => {
+            if(a.id == action.id){
+              return {...acts, name: action.newName};
+            } else {
+              return act;
+            }
+          });
+          debugger;
+          return acts;
         default:
             return state;
     }

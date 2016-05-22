@@ -33,13 +33,10 @@ export const addAct = (act) => {
 
 export const renameStage = (newName, id) => {
   return {type: 'RENAME_STAGE',
-id
+id,
 newName};
 }
 
-export const renameAct = {newName, id} => {
-  return
-}
 
 export const resize = (newHeight) => {
     return {

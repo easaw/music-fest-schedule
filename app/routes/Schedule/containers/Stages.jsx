@@ -1,33 +1,29 @@
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 import Stages from '../component/Stages.jsx';
 import _ from 'lodash';
 import Moment from 'moment';
 
 const mapStateToProps = (state) => {
-    const start = _.chain(state.acts)
-          .map()
-          .minBy('start')
-          .value()
-          .start;
-    const end = _.chain(state.acts)
-          .map()
-          .maxBy('end')
-          .value()
-          .end;
-
-    const length = (start && end) ? Moment.duration(Moment(end).diff(Moment(start))).asMinutes() : 0;
+    const start,
+        end,
+        length;
+    if (state.acts.length < 0) {
+        start = _.chain(state.acts).map().minBy('start').value().start;
+        end = _.chain(state.acts).map().maxBy('end').value().end;
+        length = (start && end)
+            ? Moment.duration(Moment(end).diff(Moment(start))).asMinutes()
+            : 0;
+    }
 
     const stages = _.map(state.stages);
 
     return {
       stages: stages,
       time: state.time,
-      start: start,
-      end: end,
-      length: length
-    };
+      start: start || 0,
+      end: end || 0,
+      length: length || 0};
 };
-
 
 const mapDispatchToProps = (dispatch) => {
     return {
@@ -37,10 +33,6 @@ const mapDispatchToProps = (dispatch) => {
     };
 };
 
-
-const StagesContainer = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Stages);
+const StagesContainer = connect(mapStateToProps, mapDispatchToProps)(Stages);
 
 export default StagesContainer;
