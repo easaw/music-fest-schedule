@@ -5,6 +5,7 @@ import {resize} from '../../../actions/index.js';
 import _ from 'lodash';
 
 const mapStateToProps = (state, ownProps) => {
+  debugger;
     const {stageId} = ownProps;
     const acts = _.chain(state.acts).map().filter((act) => {
         return _.includes(_.map(state.stages[stageId].acts), act.id);

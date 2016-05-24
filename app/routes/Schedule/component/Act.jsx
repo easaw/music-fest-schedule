@@ -45,14 +45,13 @@ export default class Act extends React.Component
     };
 
     handleChange = (event) => {
-      debugger;
       let handleChange =  this.props.changeActName;
       let newName = event.target.value;
       handleChange(newName);
     };
 
     render() {
-        const {act, height, top, isEditing} = this.props;
+        const {start, end, dj, height, top, isEditing, } = this.props;
         const {djNameTextSize} = this.state;
 
         const actStyle = {
@@ -67,14 +66,14 @@ export default class Act extends React.Component
         return <div className="act" style={actStyle} ref="act">
             <div className="time-container" ref="timeContainer">
                 <div className="time">
-                    <Time time={act.start}/>
+                    <Time time={start}/>
                     -
-                    <Time time={act.end}/>
+                    <Time time={end}/>
                 </div>
             </div>
             <div className="e-title" ref="title">
                 <span className="dj_name" style={djNameStyle} ref="djName">
-                  <EditableText text={act.dj} isEditing={isEditing} handleChange={this.handleChange} />
+                  <EditableText text={dj} isEditing={isEditing} handleChange={this.handleChange} />
                 </span>
             </div>
         </div>;

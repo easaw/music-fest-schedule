@@ -4,7 +4,7 @@ import _ from 'lodash';
 import { timeToPixels, timeDifference } from '../../../helpers';
 
 const mapStateToProps = (state, ownProps) => {
-    const act = _.find(state.acts, {id: ownProps.act.id});
+    const act = _.find(state.acts, {id: ownProps.id});
     const stageStart = _.chain(state.acts).map().minBy('start').value().start;
     const stageEnd = _.chain(state.acts).map().maxBy('end').value().end;
     const stageLength = timeDifference(stageStart, stageEnd);
@@ -14,13 +14,13 @@ const mapStateToProps = (state, ownProps) => {
     const actHeight = mills2Px(actLength);
     const top = mills2Px(topLength);
 
-    return {act: ownProps.act, top: top, height: actHeight};
+    return {top: top, height: actHeight};
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
         changeActName: (newName) => {
-            dispatch({type: 'RENAME_ACT', id: ownProps.act.id, newName});
+            dispatch({type: 'RENAME_ACT', id: ownProps.id, newName});
         }
     };
 };

@@ -32,7 +32,7 @@ export default class Acts extends React.Component {
         return (
             <div className="acts">
                 {acts.map((a) => {
-                    return (<Act key={a.id} act={a} height={height} isEditing={isEditing}/>);
+                    return (<Act key={a.id}  height={height} isEditing={isEditing} {...a} />);
                 }, this)}
             </div>
         );
