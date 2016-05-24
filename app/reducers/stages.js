@@ -37,13 +37,12 @@ const stages = (state = {
                     id,
                     newName
                 } = action;
-                return _.map(state, (a) => {
-                  if(a.id === id){
-                    return {...a, name: newName};
-                  } else {
-                    return a;
-                  }
-                });
+                const oldStage = state[id];
+                const newStage = {...oldStage, name: newName};
+                const newState = {...state};
+                newState[id] = newStage;
+                return newState;
+
             }
         default:
             {

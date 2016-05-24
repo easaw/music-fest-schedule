@@ -1,3 +1,3 @@
-export acts from './acts.js';
-export stages from './stages.js';
+export actsReducer from './acts.js';
+export stagesReducer from './stages.js';
 export time from './time';

@@ -37,7 +37,7 @@ id,
 newName};
 }
 
-export const toggleEditing = {} => {
+export const toggleEditing = () => {
   return {type: 'TOGGLE_EDITING'};
 }
 

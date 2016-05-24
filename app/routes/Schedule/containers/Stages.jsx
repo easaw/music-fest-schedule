@@ -5,7 +5,7 @@ import Moment from 'moment';
 
 const mapStateToProps = (state) => {
     let start, end, length;
-    if (state.acts.length < 0) {
+    if (state.acts) {
         start = _.chain(state.acts).map().minBy('start').value().start;
         end = _.chain(state.acts).map().maxBy('end').value().end;
         length = (start && end)

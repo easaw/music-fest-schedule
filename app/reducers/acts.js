@@ -31,14 +31,19 @@ const acts = (state = {
                 }
             );
         case 'RENAME_ACT':
-          const acts = _.map(state, (a) => {
+          const acts = _.mapValues(state, (a) => {
             if(a.id == action.id){
-              return {...act, name: action.newName};
+              const act = {...a, name: action.newName};
+              return act;
             } else {
+              debugger;
+              const act = a;
               return act;
             }
           });
+          debugger;
           return acts;
+
         default:
             return state;
     }
