@@ -1,4 +1,5 @@
 import React from 'react';
+import {EditableText} from './EditableText.jsx';
 import Time from './Time.jsx';
 import EditableText from './EditableText.jsx';
 
