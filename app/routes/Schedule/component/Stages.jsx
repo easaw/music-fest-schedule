@@ -1,5 +1,6 @@
 import React from 'react';
 import Stage from '../containers/Stage.jsx';
+import _ from 'lodash';
 
 export default class Stages extends React.Component {
 
@@ -19,13 +20,12 @@ export default class Stages extends React.Component {
                         return <button>Add Stage</button>;
                     }
                 })}
-                {stages.map((stage) => {
+                {_.values(stages).map((stage) => {
                     return <Stage
                       key={stage.id}
                       name={stage.name}
                       startTime={start}
                       id={stage.id}
-                      isEditing={isEditing}
                       totalMinutes={length}
                       />;
                 })}

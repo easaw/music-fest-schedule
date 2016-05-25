@@ -14,7 +14,13 @@ const mapStateToProps = (state, ownProps) => {
     const actHeight = mills2Px(actLength);
     const top = mills2Px(topLength);
 
-    return {top: top, height: actHeight};
+    const isEditing = state.isEditing;
+
+    return {
+      isEditing,
+      top: top,
+      height: actHeight
+    };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {

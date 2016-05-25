@@ -4,7 +4,8 @@ import _ from 'lodash';
 const mapStateToProps = (state, ownProps) => {
 
     const stage = _.find(state.stages, {id: ownProps.id});
-    return {name: stage.name};
+    const isEditing = state.isEditing;
+    return {name: stage.name, isEditing};
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {

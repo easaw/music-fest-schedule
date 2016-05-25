@@ -4,13 +4,14 @@ import Acts from '../component/Acts.jsx';
 import {resize} from '../../../actions/index.js';
 import _ from 'lodash';
 
-const mapStateToProps = (state, ownProps) => {
-  debugger;
-    const {stageId} = ownProps;
+const mapStateToProps = ( state, ownProps ) => {
+    const { stageId } = ownProps;
     const acts = _.chain(state.acts).map().filter((act) => {
         return _.includes(_.map(state.stages[stageId].acts), act.id);
     }).orderBy('start').value();
+    const isEditing = state.isEditing;
     return {
+        isEditing,
         acts: acts
     };
 };

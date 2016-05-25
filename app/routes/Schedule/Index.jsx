@@ -11,23 +11,16 @@ export default class Schedule extends React.Component {
         };
     }
 
-    toggleEditingMode = () => {
-        const currentState = this.state.isEditing;
-        this.setState({
-            isEditing: !currentState
-        });
-    };
-
     render() {
         const isEditing = this.state.isEditing;
         return (
             <div className="schedule-container">
                 <div className="top-portion">
-                    <TopBar isEditing={isEditing} onToggleEdit={this.toggleEditingMode}/>
+                    <TopBar/>
                     <Clock/>
                 </div>
                 <div className="bottom-portion">
-                    <Stages isEditing={isEditing}/>
+                    <Stages />
                 </div>
             </div>
         );

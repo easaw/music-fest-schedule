@@ -11,17 +11,19 @@ export default class TopBar extends React.Component {
 
     static propTypes = {
         isEditing: React.PropTypes.bool,
-        onToggleEdit: React.PropTypes.func.isRequired
+        toggleEditing: React.PropTypes.func.isRequired
+    };
+
+    onToggleEdit = (event) => {
+      this.props.toggleEditing();
     };
 
     renderCancelEdit = () => {
-        const onToggleEdit = this.props.onToggleEdit;
-        return <button onClick={onToggleEdit}>Done</button>;
+        return <button onClick={this.onToggleEdit}>Done</button>;
     };
 
     renderEdit = () => {
-        const onToggleEdit = this.props.onToggleEdit;
-        return <button onClick={onToggleEdit}>Edit</button>;
+        return <button onClick={this.onToggleEdit}>Edit</button>;
     };
 
     render() {

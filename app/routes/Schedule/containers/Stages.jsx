@@ -13,9 +13,12 @@ const mapStateToProps = (state) => {
             : 0;
     }
 
-    const stages = _.map(state.stages);
+    const stages = _.mapValues(state.stages);
+
+    const isEditing = state.isEditing;
 
     return {
+      isEditing,
       stages: stages,
       time: state.time,
       start: start || 0,
