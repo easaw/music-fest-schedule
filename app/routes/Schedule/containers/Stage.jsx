@@ -12,6 +12,12 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     return {
         changeStageName: (newName) => {
             dispatch({type: 'RENAME_STAGE', id: ownProps.id, newName});
+        },
+        deleteStage: () => {
+          dispatch({type: 'DELETE_STAGE', id: ownProps.id});
+        },
+        addAct: (id) => {
+          dispatch({type: 'ADD_ACT', id: ownProps.id});
         }
     };
 };

@@ -1,7 +1,6 @@
 import React from 'react';
-import {EditableText} from './EditableText.jsx';
-import Time from './Time.jsx';
 import EditableText from './EditableText.jsx';
+import Time from './Time.jsx';
 
 export default class Act extends React.Component
 {
@@ -46,35 +45,31 @@ export default class Act extends React.Component
     };
 
     handleChange = (event) => {
-      let handleChange =  this.props.changeActName;
-      let newName = event.target.value;
-      handleChange(newName);
+        let handleChange = this.props.changeActName;
+        let newName = event.target.value;
+        handleChange(newName);
     };
 
     render() {
-        const {start, end, dj, height, top, isEditing, } = this.props;
+        const { start, end, dj, height, top, isEditing} = this.props;
         const {djNameTextSize} = this.state;
 
-        const actStyle = {
-            height: `${height}px`,
-            top: `${top}px`,
-            width: '100%'
-        };
-
-        const djNameStyle = {
-            fontSize: djNameTextSize
-        };
-        return <div className="act" style={actStyle} ref="act">
+        return <div className="act"
+                    style={{ height: `${height}px`, top: `${top}px`, width: '100%'}}
+                    ref="act">
             <div className="time-container" ref="timeContainer">
                 <div className="time">
                     <Time time={start}/>
                     -
                     <Time time={end}/>
                 </div>
+                <button className="delete-act" onClick={this.handleActDelete}>[x]
+                </button>
             </div>
             <div className="e-title" ref="title">
-                <span className="dj_name" style={djNameStyle} ref="djName">
-                  <EditableText text={dj} isEditing={isEditing} handleChange={this.handleChange} />
+                <span className="dj_name"
+                style={{ fontSize: djNameTextSize }} ref="djName">
+                    <EditableText text={dj} isEditing={isEditing} handleChange={this.handleChange}/>
                 </span>
             </div>
         </div>;

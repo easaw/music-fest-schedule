@@ -16,6 +16,14 @@ export default class Stage extends React.Component {
       handleChange(newName);
 
     };
+    onDelete = () => {
+      const stageId = this.props.id;
+      this.props.deleteStage(stageId);
+    };
+    onAddAct = () => {
+      const stageId = this.props.id;
+      this.props.addAct(stageId);
+    }
     render() {
         const {name, id, isEditing} = this.props;
         return (
@@ -25,6 +33,16 @@ export default class Stage extends React.Component {
                       isEditing={isEditing}
                       handleChange={this.handleChange}
                       text={name}  />
+                    <button
+                      onClick={this.onDelete}
+                      className="delete-stage">
+                      [x]
+                    </button>
+                    <button
+                      onClick={this.onAddAct}
+                      className="add-act">
+                      [+]
+                    </button>
                 </div>
                 <Acts stageId={id} />
             </div>

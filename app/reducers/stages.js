@@ -1,4 +1,6 @@
 import uuid from 'node-uuid';
+import _ from 'lodash';
+
 const initialState = {
     stages: []
 }
@@ -20,11 +22,9 @@ const stages = (state = initialState.stages, action) => {
             }
         case 'DELETE_STAGE':
             {
-                return state.stages.filter(
-                    (stage) => {
-                        return stage.id != action.id;
-                    }
-                );
+              debugger;
+              var z = _.omit(state, action.id);
+                return _.omit(state, action.id);
             }
         case 'RENAME_STAGE':
             {

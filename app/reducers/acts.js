@@ -1,10 +1,15 @@
+import uuid from 'node-uuid';
+import moment from 'moment';
+
 const act = (state, action) => {
     switch (action.type) {
         case 'ADD_ACT':
-            return {
-                id: action.id,
-                name: action.name
-            };
+          return {
+            id: uuid.v4(),
+            dj: 'unnamed',
+            start: Date.now().toString(),
+            end: Date.now().toString()
+          }
         default:
             return state;
     }
@@ -20,10 +25,8 @@ const acts = (state = {
                 height: action.newSize
             });
         case 'ADD_ACT':
-            return [
-                ...state.stages,
-                act(undefined, action)
-            ];
+            const addAct = act(undefined, action);
+            return state;
         case 'DELETE_ACT':
             return state.acts.filter(
                 (act) => {
