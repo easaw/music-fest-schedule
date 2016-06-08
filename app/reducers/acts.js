@@ -31,7 +31,6 @@ const acts = (state = {
                 }
             );
         case 'RENAME_ACT':
-        debugger;
           let oldAct = state[action.id];
           let newAct = {...oldAct, dj: action.newName};
           let acs = {...state};

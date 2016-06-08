@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import {toggleEditing} from '../../../actions/index.js';
+import {toggleEditing, addStage } from '../../../actions/index.js';
 import TopBar from '../component/TopBar.jsx';
 
 
@@ -11,9 +11,11 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-        toggleEditing: (newName) => {
-          console.log(toggleEditing);
+        toggleEditing: () => {
             dispatch(toggleEditing());
+        },
+        addStage: () => {
+          dispatch(addStage());
         }
     };
 };

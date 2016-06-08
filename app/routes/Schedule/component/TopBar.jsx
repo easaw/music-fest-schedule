@@ -10,6 +10,7 @@ export default class TopBar extends React.Component {
     }
 
     static propTypes = {
+        addStage: React.PropTypes.func.isRequired,
         isEditing: React.PropTypes.bool,
         toggleEditing: React.PropTypes.func.isRequired
     };
@@ -26,10 +27,16 @@ export default class TopBar extends React.Component {
         return <button onClick={this.onToggleEdit}>Edit</button>;
     };
 
+    addStage = () => {
+      debugger;
+      this.props.addStage();
+    }
+
     render() {
         const isEditing = this.props.isEditing;
         return <navbar className="top-bar">
             <div className="nav-buttons">
+            <button onClick={this.addStage}>Add Stage</button>
                 {(() => {
                     if (isEditing) {
                         return this.renderCancelEdit();

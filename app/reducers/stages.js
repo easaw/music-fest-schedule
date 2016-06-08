@@ -1,27 +1,22 @@
-const stage = (state = {
+import uuid from 'node-uuid';
+const initialState = {
     stages: []
-}, action) => {
-    switch (action.type) {
-        case 'ADD_STAGE':
-            return {
-                id: action.id,
-                name: action.name
-            };
-        default:
-            return state;
-    }
-};
+}
 
-const stages = (state = {
-    stages: []
-}, action) => {
+
+const stages = (state = initialState.stages, action) => {
     switch (action.type) {
         case 'ADD_STAGE':
             {
-                return [
-                ...state.stages,
-                stage(undefined, action)
-            ];
+                debugger;
+                let newState = {...state};
+                let newStage = {
+                    id: uuid.v4(),
+                    name: "Rename Me",
+                    acts: []
+                };
+                newState[newStage.id] = newStage;
+                return newState;
             }
         case 'DELETE_STAGE':
             {
@@ -38,8 +33,11 @@ const stages = (state = {
                     newName
                 } = action;
                 const oldStage = state[id];
-                const newStage = {...oldStage, name: newName};
-                const newState = {...state};
+                let newStage = {...oldStage,
+                    name: newName
+                };
+                let newState = {...state
+                };
                 newState[id] = newStage;
                 return newState;
 
