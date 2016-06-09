@@ -1,7 +1,9 @@
 import uuid from 'node-uuid';
 import moment from 'moment';
+import initialState from '../static/state.js';
+import update from 'react-addons-update';
 
-const act = (state, action) => {
+const act = (state = initialState, action) => {
     switch (action.type) {
         case 'ADD_ACT':
           return {
@@ -15,18 +17,22 @@ const act = (state, action) => {
     }
 };
 
-const acts = (state = {
-    acts: [],
-    height: 0
-}, action) => {
+const acts = (state = initialState, action) => {
     switch (action.type) {
         case 'RESIZE':
             return Object.assign({}, state, {
                 height: action.newSize
             });
         case 'ADD_ACT':
+            const stageId = action.id
             const addAct = act(undefined, action);
-            return state;
+            let newActs = {...state.acts};
+            newActs[addAct.id] = addAct
+
+            let newStages = {...state.stages};
+            newStages[stageId].acts = [stageId];
+            state.acts = newActs;
+            return {stages: newStages, acts: newActs};
         case 'DELETE_ACT':
             return state.acts.filter(
                 (act) => {

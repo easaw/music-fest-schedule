@@ -1,7 +1,10 @@
-const isEditing = (state = false, action) => {
+import initialState from '../static/state.js';
+
+const isEditing = (state = initialState, action) => {
     switch (action.type) {
         case 'TOGGLE_EDITING':
-          return !state;
+        debugger;
+          return !state
         default:
             return state;
     }

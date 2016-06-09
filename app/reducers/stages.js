@@ -1,12 +1,8 @@
 import uuid from 'node-uuid';
 import _ from 'lodash';
+import initialState from '../static/state.js';
 
-const initialState = {
-    stages: []
-}
-
-
-const stages = (state = initialState.stages, action) => {
+const stages = (state = initialState, action) => {
     switch (action.type) {
         case 'ADD_STAGE':
             {

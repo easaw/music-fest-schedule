@@ -1,7 +1,8 @@
-const time = (state = Date.now(), action) => {
+import initialState from '../static/state.js';
+const time = (state = initialState, action) => {
     switch (action.type) {
         case 'TIME_TICK':
-          return Date.now();
+          return {time: Date.now()};
         default:
             return state;
     }

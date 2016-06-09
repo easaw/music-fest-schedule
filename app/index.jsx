@@ -11,7 +11,7 @@ import Stage from './routes/Stage/Index.jsx';
 import Act from './routes/Act/Index.jsx';
 import State from './static/state.js';
 
-const state = State();
+const state = State;
 const store = createStore(combineReducers({
     ...reducers,
     routing: routerReducer
