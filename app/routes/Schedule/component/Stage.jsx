@@ -21,7 +21,6 @@ export default class Stage extends React.Component {
       this.props.deleteStage(stageId);
     };
     onAddAct = () => {
-      debugger;
       const stageId = this.props.id;
       this.props.addAct(stageId);
     }

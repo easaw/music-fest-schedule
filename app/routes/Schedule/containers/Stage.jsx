@@ -11,13 +11,17 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
         changeStageName: (newName) => {
-            dispatch({type: 'RENAME_STAGE', id: ownProps.id, newName});
+            debugger;
+            const result = dispatch({type: 'RENAME_STAGE', id: ownProps.id, newName});
+            debugger;
         },
         deleteStage: () => {
-          dispatch({type: 'DELETE_STAGE', id: ownProps.id});
+          const result = dispatch({type: 'DELETE_STAGE', id: ownProps.id});
+                    debugger;
         },
         addAct: (id) => {
-          dispatch({type: 'ADD_ACT', id: ownProps.id});
+         const result =  dispatch({type: 'ADD_ACT', id: ownProps.id});
+                   debugger;
         }
     };
 };

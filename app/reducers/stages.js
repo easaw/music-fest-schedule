@@ -6,7 +6,6 @@ const stages = (state = initialState, action) => {
     switch (action.type) {
         case 'ADD_STAGE':
             {
-                debugger;
                 let newState = {...state};
                 let newStage = {
                     id: uuid.v4(),
@@ -38,6 +37,22 @@ const stages = (state = initialState, action) => {
                 return newState;
 
             }
+        case 'ATTACH_ACT':
+        {
+          const {stageId, actId} = action;
+          const newState = {...state};
+          state[stageId].acts.push(actId);
+          return state;
+        }
+        case 'DETTACH_ACT':
+        {
+          const {stageId, actId} = action;
+          const newState = {...state};
+          newState[actId].acts =  _.filter(state[stageId].acts, (item) => {
+            return item != actId;
+          });
+          return newState;
+        }
         default:
             {
                 return state;

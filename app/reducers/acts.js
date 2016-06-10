@@ -24,27 +24,28 @@ const acts = (state = initialState, action) => {
                 height: action.newSize
             });
         case 'ADD_ACT':
-            const stageId = action.id
-            const addAct = act(undefined, action);
-            let newActs = {...state.acts};
-            newActs[addAct.id] = addAct
-
-            let newStages = {...state.stages};
-            newStages[stageId].acts = [stageId];
-            state.acts = newActs;
-            return {stages: newStages, acts: newActs};
+      {
+          let newState = {...state};
+          const newAct = act(undefined, action);
+          newState[newAct.id] = newAct;
+          return newState;
+        }
         case 'DELETE_ACT':
+        {
             return state.acts.filter(
                 (act) => {
                     return act.id != action.id;
                 }
             );
+          }
         case 'RENAME_ACT':
+        {
           let oldAct = state[action.id];
           let newAct = {...oldAct, dj: action.newName};
           let acs = {...state};
           acs[action.id] = newAct;
           return acs;
+        }
         default:
             return state;
     }
