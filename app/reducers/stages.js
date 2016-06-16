@@ -12,7 +12,6 @@ const stages = (state = initialState, action) => {
             }
         case 'DELETE_STAGE':
             {
-              debugger;
               var z = _.omit(state, action.id);
                 return _.omit(state, action.id);
             }

@@ -21,9 +21,6 @@ export default (() => {
   });
 
 
-
-
-
   const result = {
       stages: [{
           id: uuid.v4(),
@@ -91,9 +88,6 @@ export default (() => {
       }]
   };
 
-
-
-    debugger;
     let results = normalize(result, {
         stages: arrayOf(stage)
     });
