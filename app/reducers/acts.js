@@ -12,9 +12,9 @@ const acts = (state = initialState, action) => {
             });
         case 'ADD_ACT':
       {
+        const act = action.act;
           let newState = {...state};
-          const newAct = act(undefined, action);
-          newState[newAct.id] = newAct;
+          newState[act.id] = act;
           return newState;
         }
         case 'DELETE_ACT':

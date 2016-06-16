@@ -45,9 +45,9 @@ export default class Act extends React.Component
     };
 
     handleChange = (event) => {
-        let handleChange = this.props.renameAct;
+      const {id, renameAct} = this.props;
         let newName = event.target.value;
-        handleChange(newName);
+        renameAct(id, newName);
     };
 
     render() {
