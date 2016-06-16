@@ -1,7 +1,7 @@
 import {connect} from 'react-redux';
 import Stages from '../component/Act.jsx';
 import _ from 'lodash';
-import { renameStage } from '../../../model/index.js'
+import { renameStage } from '../../../actions/index.js'
 import { timeToPixels, timeDifference } from '../../../helpers';
 
 const mapStateToProps = (state, ownProps) => {

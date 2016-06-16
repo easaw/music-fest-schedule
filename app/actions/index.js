@@ -1,5 +1,5 @@
-export * from 'acts.js';
-export * from 'stage.js';
+export * from './acts.js';
+export * from './stage.js';
 
 export const timeTick = () => {
     return {

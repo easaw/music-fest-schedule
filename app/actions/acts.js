@@ -1,4 +1,4 @@
-export const RenameAct (newName) => {
+export const RenameAct = (newName) => {
   return {
     type: 'RENAME_ACT',
     id: ownProps.id,
@@ -6,7 +6,7 @@ export const RenameAct (newName) => {
   }
 }
 
-export const addAct (act) => {
+export const addAct = (act) => {
   return {
     type: 'ADD_ACT',
     act

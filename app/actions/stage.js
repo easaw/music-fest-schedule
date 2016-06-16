@@ -14,14 +14,14 @@ export const renameStage = (newName, id) => {
   };
 }
 
-export const deleteStage (id) => {
+export const deleteStage = (id) => {
   return {
     type: 'DELETE_STAGE',
     id
   };
 }
 
-export const attachAct (stageId, actId) => {
+export const attachAct = (stageId, actId) => {
   return {
     type: 'ATTACH_ACT',
     stageId,
