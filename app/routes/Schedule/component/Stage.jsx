@@ -1,7 +1,7 @@
 import React from 'react';
 import Acts from '../containers/Acts.jsx';
-import  EditableText from './EditableText.jsx';
-import { Act } from '../../../model/act.js';
+import EditableText from './EditableText.jsx';
+import Act from '../../../model/act.js';
 
 export default class Stage extends React.Component {
 
@@ -18,8 +18,8 @@ export default class Stage extends React.Component {
 
     };
     onDelete = () => {
-      const stageId = this.props.id;
-      this.props.deleteStage(stageId);
+      const { id, deleteStage } = this.props;
+      deleteStage(id);
     };
     onAddAct = () => {
       const { stageId, addAct, attachAct } = this.props.id;

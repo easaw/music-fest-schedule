@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux';
 
 import Stage from '../component/stage.jsx';
 import _ from 'lodash';
-import {renameStage, attachAct, addAct } from '../../../actions/index.js';
+import {renameStage, attachAct, addAct, deleteStage } from '../../../actions/index.js';
 const mapStateToProps = (state, ownProps) => {
 
     const stage = _.find(state.stages, {id: ownProps.id});
@@ -15,7 +15,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return bindActionCreators({
     renameStage,
     attachAct,
-    addAct
+    addAct,
+    deleteStage
   }, dispatch);
 };
 

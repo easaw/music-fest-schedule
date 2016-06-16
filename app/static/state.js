@@ -25,6 +25,7 @@ export default (() => {
       stages: [{
           id: uuid.v4(),
           name: 'Energy',
+          date: '2016-02-13',
           acts: [{
               id: uuid.v4(),
               dj: 'Michael Constable B2B Theo Hansen',
@@ -54,6 +55,7 @@ export default (() => {
       }, {
           id: uuid.v4(),
           name: 'Bass',
+          date: '2016-02-13',
           acts: [{
               id: uuid.v4(),
               dj: 'Pill Dickle',
