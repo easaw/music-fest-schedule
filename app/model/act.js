@@ -7,6 +7,7 @@ class Act{
     start = moment(),
     end = moment() )
     {
+      this.dj = dj;
       this.id = uuid.v4();
       this.start = start;
       this.end = end;
