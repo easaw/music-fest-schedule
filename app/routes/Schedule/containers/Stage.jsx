@@ -8,7 +8,11 @@ const mapStateToProps = (state, ownProps) => {
 
     const stage = _.find(state.stages, {id: ownProps.id});
     const isEditing = state.isEditing;
-    return {name: stage.name, isEditing};
+    return {
+      name: stage.name,
+      id: stage.id,
+      isEditing
+    };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {

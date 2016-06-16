@@ -18,14 +18,15 @@ export const renameStage = (newName, id) => {
 export const deleteStage = (id) => {
   return {
     type: 'DELETE_STAGE',
-    id
+    id: id
   };
 }
 
 export const attachAct = (stageId, actId) => {
+  debugger;
   return {
     type: 'ATTACH_ACT',
-    stageId,
-    actId
+    stageId: stageId,
+    actId: actId
   };
 }
