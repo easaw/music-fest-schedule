@@ -1,4 +1,6 @@
-export const addStage = (stage) => {
+import { Stage } from '../model/stage.js';
+
+export const addStage = (stage = new Stage()) => {
     return {
         type: 'ADD_STAGE',
         stage: stage
