@@ -12,9 +12,9 @@ export default class Stage extends React.Component {
     };
 
     handleChange = (event) => {
-      let handleChange =  this.props.changeStageName;
+      let { renameStage, id } =  this.props;
       let newName = event.target.value;
-      handleChange(newName);
+      renameStage(newName, id);
 
     };
     onDelete = () => {
@@ -22,10 +22,10 @@ export default class Stage extends React.Component {
       this.props.deleteStage(stageId);
     };
     onAddAct = () => {
-      const stageId = this.props.id;
+      const { stageId, addAct, attachAct } = this.props.id;
       const act = new Act();
-      this.props.addAct(act);
-      this.props.attachAct(act.id, stageId);
+      addAct(act);
+      attachAct(stageId, act.id);
     }
     render() {
         const {name, id, isEditing} = this.props;

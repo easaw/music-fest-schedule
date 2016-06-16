@@ -27,7 +27,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return bindActionCreators({
-      renameStage
+      renameAct
   }, dispatch);
 };
 
