@@ -1,4 +1,6 @@
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
 import Stage from '../component/stage.jsx';
 import _ from 'lodash';
 import {renameStage, attachAct, addAct } from '../../../actions/index.js';

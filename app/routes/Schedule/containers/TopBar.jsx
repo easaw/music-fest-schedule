@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import {toggleEditing, addStage } from '../../../actions/index.js';
 import TopBar from '../component/TopBar.jsx';
 

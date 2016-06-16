@@ -20,7 +20,7 @@ export default class Clock extends React.Component {
         window.setInterval(() => {
             this
                 .props
-                .onTick(Date.now());
+                .timeTick();
         }, 60000);
     }
 

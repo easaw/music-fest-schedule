@@ -1,5 +1,5 @@
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import Clock from '../component/Clock.jsx';
 import { timeTick } from '../../../actions/index.js'
 
