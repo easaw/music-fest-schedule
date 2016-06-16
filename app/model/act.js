@@ -1,10 +1,11 @@
 import uuid from 'node-uuid';
+import moment from 'moment';
 
 class Act{
   constructor(
     dj = "Create a Name",
-    start = Date.Now(),
-    end = Date.Now() )
+    start = moment(),
+    end = moment() )
     {
       this.id = uuid.v4();
       this.start = start;
