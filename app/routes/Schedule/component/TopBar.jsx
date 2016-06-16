@@ -28,7 +28,7 @@ export default class TopBar extends React.Component {
     };
 
     addStage = () => {
-      const stage = Stage();
+      const stage = new Stage();
       this.props.addStage(stage);
     }
 

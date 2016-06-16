@@ -23,7 +23,7 @@ export default class Stage extends React.Component {
     };
     onAddAct = () => {
       const stageId = this.props.id;
-      const act = Act();
+      const act = new Act();
       this.props.addAct(act);
       this.props.attachAct(act.id, stageId);
     }

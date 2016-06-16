@@ -1,8 +1,7 @@
-export const addStage = (text) => {
+export const addStage = (stage) => {
     return {
         type: 'ADD_STAGE',
-        id: uuid.v4(),
-        text
+        stage: stage
     };
 };
 
