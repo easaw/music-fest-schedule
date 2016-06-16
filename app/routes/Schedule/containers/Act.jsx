@@ -1,6 +1,7 @@
 import {connect} from 'react-redux';
 import Stages from '../component/Act.jsx';
 import _ from 'lodash';
+import { renameStage } from '../../../model/index.js'
 import { timeToPixels, timeDifference } from '../../../helpers';
 
 const mapStateToProps = (state, ownProps) => {
@@ -24,11 +25,9 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-    return {
-        changeActName: (newName) => {
-            dispatch({type: 'RENAME_ACT', id: ownProps.id, newName});
-        }
-    };
+  return bindActionCreators({
+      renameStage
+  }, dispatch);
 };
 
 

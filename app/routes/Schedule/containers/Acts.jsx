@@ -17,8 +17,6 @@ const mapStateToProps = ( state, ownProps ) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-    debugger;
-    const z = dispatch;
     return bindActionCreators({
         resize
     }, dispatch);

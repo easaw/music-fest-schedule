@@ -1,7 +1,15 @@
-import {connect} from 'react-redux';
-import Stages from '../component/Stages.jsx';
+import { connect } from 'react-redux';
 import _ from 'lodash';
 import Moment from 'moment';
+import {
+  addStage,
+  renameStage,
+  deleteStage,
+  attachAct,
+  addAct
+} from '../../../actions/index.js';
+import Stages from '../component/Stages.jsx';
+
 
 const mapStateToProps = (state) => {
     let start, end, length;
@@ -27,11 +35,13 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-    return {
-        addStage: () => {
-            dispatch({type: 'STAGE_ADD'});
-        }
-    };
+  return bindActionCreators({
+    addStage,
+    renameStage,
+    deleteStage,
+    attachAct,
+    addAct
+  }, dispatch);
 };
 
 const StagesContainer = connect(mapStateToProps, mapDispatchToProps)(Stages);

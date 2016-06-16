@@ -1,6 +1,7 @@
 import React from 'react';
 import Acts from '../containers/Acts.jsx';
 import  EditableText from './EditableText.jsx';
+import { Act } from '../../../model/act.js';
 
 export default class Stage extends React.Component {
 
@@ -22,7 +23,9 @@ export default class Stage extends React.Component {
     };
     onAddAct = () => {
       const stageId = this.props.id;
-      this.props.addAct(stageId);
+      const act = Act();
+      this.props.addAct(act);
+      this.props.attachAct(act.id, stageId);
     }
     render() {
         const {name, id, isEditing} = this.props;

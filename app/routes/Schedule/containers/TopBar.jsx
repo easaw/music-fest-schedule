@@ -10,14 +10,10 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-    return {
-        toggleEditing: () => {
-            dispatch(toggleEditing());
-        },
-        addStage: () => {
-          dispatch(addStage());
-        }
-    };
+  return bindActionCreators({
+    toggleEditing,
+    addStage
+  }, dispatch);
 };
 
 

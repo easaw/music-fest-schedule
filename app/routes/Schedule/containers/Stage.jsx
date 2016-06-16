@@ -1,6 +1,7 @@
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import Stage from '../component/stage.jsx';
 import _ from 'lodash';
+import {renameStage, attachAct, addAct } from '../../../actions/index.js';
 const mapStateToProps = (state, ownProps) => {
 
     const stage = _.find(state.stages, {id: ownProps.id});
@@ -9,21 +10,11 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-    return {
-        changeStageName: (newName) => {
-            debugger;
-            const result = dispatch({type: 'RENAME_STAGE', id: ownProps.id, newName});
-            debugger;
-        },
-        deleteStage: () => {
-          const result = dispatch({type: 'DELETE_STAGE', id: ownProps.id});
-                    debugger;
-        },
-        addAct: (id) => {
-         const result =  dispatch({type: 'ADD_ACT', id: ownProps.id});
-                   debugger;
-        }
-    };
+  return bindActionCreators({
+    renameStage,
+    attachAct,
+    addAct
+  }, dispatch);
 };
 
 const StageContainer = connect(mapStateToProps, mapDispatchToProps)(Stage);

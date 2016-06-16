@@ -15,7 +15,7 @@ export default class Act extends React.Component
         act: React.PropTypes.object.isRequired,
         height: React.PropTypes.number.isRequired,
         top: React.PropTypes.number.isRequired,
-        changeActName: React.PropTypes.func.isRequired
+        renameAct: React.PropTypes.func.isRequired
     };
 
     static defaultProps = {
@@ -45,7 +45,7 @@ export default class Act extends React.Component
     };
 
     handleChange = (event) => {
-        let handleChange = this.props.changeActName;
+        let handleChange = this.props.renameAct;
         let newName = event.target.value;
         handleChange(newName);
     };

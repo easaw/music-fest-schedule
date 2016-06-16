@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Stage from '../../../model/stage'
 export default class TopBar extends React.Component {
     constructor(props) {
         super(props);
@@ -28,8 +28,8 @@ export default class TopBar extends React.Component {
     };
 
     addStage = () => {
-      debugger;
-      this.props.addStage();
+      const stage = Stage();
+      this.props.addStage(stage);
     }
 
     render() {

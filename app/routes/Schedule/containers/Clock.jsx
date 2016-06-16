@@ -1,4 +1,5 @@
 import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
 import Clock from '../component/Clock.jsx';
 import { timeTick } from '../../../actions/index.js'
 
@@ -7,11 +8,9 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-    return {
-        onTick: () => {
-            dispatch(timeTick());
-        }
-    };
+  return bindActionCreators({
+    timeTick
+  }, dispatch);
 };
 
 const ClockContainer = connect(mapStateToProps, mapDispatchToProps)(Clock);
