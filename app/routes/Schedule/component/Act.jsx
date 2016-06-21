@@ -51,7 +51,7 @@ export default class Act extends React.Component
     };
 
     render() {
-        const { start, end, dj, height, top, isEditing} = this.props;
+        const { start, end, dj, height, top, isEditing, stageStart, stageEnd, stageLength} = this.props;
         const {djNameTextSize} = this.state;
 
         return <div className="act"

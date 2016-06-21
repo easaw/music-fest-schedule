@@ -6,10 +6,9 @@ import { renameAct } from '../../../actions/index.js'
 import { timeToPixels, timeDifference } from '../../../helpers';
 
 const mapStateToProps = (state, ownProps) => {
+    const {id, stageStart, stageEnd, stageLength} = ownProps;
     const act = _.find(state.acts, {id: ownProps.id});
-    const stageStart = _.chain(state.acts).map().minBy('start').value().start;
-    const stageEnd = _.chain(state.acts).map().maxBy('end').value().end;
-    const stageLength = timeDifference(stageStart, stageEnd);
+
     const actLength = timeDifference(act.start, act.end);
     const topLength = timeDifference(stageStart, act.start);
     const mills2Px = timeToPixels(stageLength, ownProps.height);

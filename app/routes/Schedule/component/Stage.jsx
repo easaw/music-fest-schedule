@@ -13,44 +13,37 @@ export default class Stage extends React.Component {
     };
 
     handleChange = (event) => {
-      let { renameStage, id } =  this.props;
-      let newName = event.target.value;
-      renameStage(newName, id);
+        let {renameStage, id} = this.props;
+        let newName = event.target.value;
+        renameStage(newName, id);
 
     };
     onDelete = () => {
-      const { id, deleteStage } = this.props;
-      deleteStage(id);
+        const {id, deleteStage} = this.props;
+        deleteStage(id);
     };
     onAddAct = () => {
-      const { id, addAct, attachAct, startTime } = this.props;
-      const act = new Act();
-      act.start = Moment(startTime).subtract(-2, 'h').format();
-      act.end = Moment(startTime).subtract(-1, 'h').format();
-      addAct(act);
-      attachAct(id, act.id);
+        const {id, addAct, attachAct, stageStart} = this.props;
+        const act = new Act();
+        act.start = Moment(stageStart).subtract(1, 'h').format();
+        act.end = Moment(stageStart).format();
+        addAct(act);
+        attachAct(id, act.id);
     }
     render() {
-        const {name, id, isEditing} = this.props;
+        const {name, id, isEditing, stageStart, stageEnd, stageLength} = this.props;
         return (
             <div className="stage">
                 <div className="day">
-                    <EditableText
-                      isEditing={isEditing}
-                      handleChange={this.handleChange}
-                      text={name}  />
-                    <button
-                      onClick={this.onDelete}
-                      className="delete-stage">
-                      [x]
+                    <EditableText isEditing={isEditing} handleChange={this.handleChange} text={name}/>
+                    <button onClick={this.onDelete} className="delete-stage">
+                        [x]
                     </button>
-                    <button
-                      onClick={this.onAddAct}
-                      className="add-act">
-                      [+]
+                    <button onClick={this.onAddAct} className="add-act">
+                        [+]
                     </button>
                 </div>
-                <Acts stageId={id} />
+                <Acts stageId={id} stageStart={stageStart} stageEnd={stageEnd} stageLength={stageLength}/>
             </div>
         );
     }

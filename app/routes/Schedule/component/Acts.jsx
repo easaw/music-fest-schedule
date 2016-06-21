@@ -27,12 +27,12 @@ export default class Acts extends React.Component {
     };
 
     render() {
-        const {isEditing, acts} = this.props;
+        const {isEditing, acts, stageStart, stageEnd, stageLength} = this.props;
         const height = this.state.height;
         return (
             <div className="acts">
                 {acts.map((a) => {
-                    return (<Act key={a.id}  height={height}  {...a} />);
+                    return (<Act key={a.id}  height={height} stageStart={stageStart} stageEnd={stageEnd} stageLength={stageLength}  {...a} />);
                 }, this)}
             </div>
         );

@@ -12,7 +12,7 @@ export default class Stages extends React.Component {
     }
 
     render() {
-        const {stages, start, length, isEditing} = this.props;
+        const {stages, start, length, isEditing, stageStart, stageEnd, stageLength} = this.props;
         return (
             <div ref="schedule" className="schedule">
                 {(() => {
@@ -27,6 +27,9 @@ export default class Stages extends React.Component {
                       startTime={start}
                       id={stage.id}
                       totalMinutes={length}
+                      stageStart={stageStart}
+                      stageEnd={stageEnd}
+                      stageLength={stageLength}
                       />;
                 })}
             </div>
