@@ -23,7 +23,6 @@ export const deleteStage = (id) => {
 }
 
 export const attachAct = (stageId, actId) => {
-  debugger;
   return {
     type: 'ATTACH_ACT',
     stageId: stageId,
