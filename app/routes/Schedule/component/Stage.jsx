@@ -2,6 +2,7 @@ import React from 'react';
 import Acts from '../containers/Acts.jsx';
 import EditableText from './EditableText.jsx';
 import Act from '../../../model/act.js';
+import Moment from 'moment';
 
 export default class Stage extends React.Component {
 
@@ -22,8 +23,10 @@ export default class Stage extends React.Component {
       deleteStage(id);
     };
     onAddAct = () => {
-      const { id, addAct, attachAct } = this.props;
+      const { id, addAct, attachAct, startTime } = this.props;
       const act = new Act();
+      act.start = Moment(startTime).subtract(-2, 'h').format();
+      act.end = Moment(startTime).subtract(-1, 'h').format();
       addAct(act);
       attachAct(id, act.id);
     }
