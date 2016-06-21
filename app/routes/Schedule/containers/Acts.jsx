@@ -6,13 +6,17 @@ import _ from 'lodash';
 
 const mapStateToProps = ( state, ownProps ) => {
     const { stageId } = ownProps;
-    const acts = _.chain(state.acts).map().filter((act) => {
-        return _.includes(_.map(state.stages[stageId].acts), act.id);
-    }).orderBy('start').value();
+    const actIds = state.stages[stageId].acts;
+    debugger;
+    const acts = actIds.map((id) => {
+      return state.acts[id];
+    });
+    const orderedActs  = _.orderBy(acts, ['start'], ['asc']);
+    debugger;
     const isEditing = state.isEditing;
     return {
         isEditing,
-        acts: acts
+        acts: orderedActs
     };
 };
 
