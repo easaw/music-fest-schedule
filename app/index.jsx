@@ -19,6 +19,6 @@ render(
     <Router history={history}>
         <Route path="/" component={Schedule}/>
         <Route path="/stage" component={Stage}/>
-        <Route path="/act" component={Act}/>
+        <Route path="/act/:id" component={Act}/>
     </Router>
 </Provider>, document.getElementById('app'));

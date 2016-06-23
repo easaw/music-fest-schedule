@@ -25,6 +25,7 @@
     "less": "^2.6.1",
     "less-loader": "^2.2.3",
     "npm-install-webpack-plugin": "^2.0.2",
+    "react-pure-modal": "^1.0.1",
     "redux-devtools": "^3.1.1",
     "style-loader": "^0.13.0",
     "webpack": "^1.13.0",

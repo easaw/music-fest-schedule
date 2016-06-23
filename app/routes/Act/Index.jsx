@@ -1,7 +1,9 @@
-import React from 'react';
+import React  from 'react';
+import Edit from './containers/Edit.jsx';
 
-export default class Act {
+export default class Act extends React.Component {
   render(){
-    return <span>Act Screen</span>;
+    const {id} = this.props.params;
+    return <Edit id={id} />;
   }
 }

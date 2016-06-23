@@ -1,6 +1,7 @@
 import React from 'react';
 import EditableText from './EditableText.jsx';
 import Time from './Time.jsx';
+import {Link} from 'react-router'
 
 export default class Act extends React.Component
 {
@@ -28,10 +29,11 @@ export default class Act extends React.Component
         let djNameTextSize = this.state.djNameTextSize;
         const djName = this.refs.djName;
         const title = this.refs.title;
-
-        if (djName.offsetHeight >= title.offsetHeight || djName.offsetHeight < title.offsetHeight * .80) {
-            djNameTextSize = title.offsetWidth / 8.5; // Magic number I just guessed
-            this.setState({djNameTextSize: djNameTextSize});
+        if (djName && title) {
+            if (djName.offsetHeight >= title.offsetHeight || djName.offsetHeight < title.offsetHeight * .80) {
+                djNameTextSize = title.offsetWidth / 8.5; // Magic number I just guessed
+                this.setState({djNameTextSize: djNameTextSize});
+            }
         }
 
     };
@@ -45,30 +47,47 @@ export default class Act extends React.Component
     };
 
     handleChange = (event) => {
-      const {id, renameAct} = this.props;
+        const {id, renameAct} = this.props;
         let newName = event.target.value;
         renameAct(id, newName);
     };
 
     render() {
-        const { start, end, dj, height, top, isEditing, stageStart, stageEnd, stageLength} = this.props;
+        const {
+            id,
+            start,
+            end,
+            dj,
+            height,
+            top,
+            isEditing,
+            stageStart,
+            stageEnd,
+            stageLength
+        } = this.props;
         const {djNameTextSize} = this.state;
+        const path = `/act/${id}`;
 
-        return <div className="act"
-                    style={{ height: `${height}px`, top: `${top}px`, width: '100%'}}
-                    ref="act">
+        return <div className="act" style={{
+            height: `${height}px`,
+            top: `${top}px`,
+            width: '100%'
+        }} ref="act">
             <div className="time-container" ref="timeContainer">
                 <div className="time">
                     <Time time={start}/>
                     -
                     <Time time={end}/>
                 </div>
-                <button className="delete-act" onClick={this.handleActDelete}>[x]
+                <button className="delete-act" onClick={this.handleActDelete}>
+                    [x]
                 </button>
+                <Link to={path}>Edit</Link>
             </div>
             <div className="e-title" ref="title">
-                <span className="dj_name"
-                style={{ fontSize: djNameTextSize }} ref="djName">
+                <span className="dj_name" style={{
+                    fontSize: djNameTextSize
+                }} ref="djName">
                     <EditableText text={dj} isEditing={isEditing} handleChange={this.handleChange}/>
                 </span>
             </div>
