@@ -1,4 +1,4 @@
-import './styles/main.less';
+import './styles/main.scss';
 import React from 'react';
 import {render} from 'react-dom';
 import store from './configure-store.js';

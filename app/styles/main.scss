@@ -1,0 +1,24 @@
+@import "~normalize.css/normalize.css";
+@import "typography.scss";
+@import "components/act.scss";
+@import "components/acts.scss";
+@import "components/app.scss";
+@import "components/clock.scss";
+@import "components/schedule.scss";
+@import "components/stage.scss";
+
+@import "components/top-bar.scss";
+
+html {
+    height: 100%;
+    margin: 0;
+
+    body {
+        height: 100%;
+        margin: 0;
+    }
+}
+
+input[type='text'] {
+    width: 100%;
+}

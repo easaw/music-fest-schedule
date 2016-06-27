@@ -1,5 +1,9 @@
 import React from 'react';
 import Stage from '../../../model/stage'
+import AppBar from 'react-toolbox/lib/app_bar';
+import {Button, IconButton} from 'react-toolbox/lib/button';
+
+
 export default class TopBar extends React.Component {
     constructor(props) {
         super(props);
@@ -20,11 +24,11 @@ export default class TopBar extends React.Component {
     };
 
     renderCancelEdit = () => {
-        return <button onClick={this.onToggleEdit}>Done</button>;
+        return <Button flat primary onClick={this.onToggleEdit}>Done</Button>;
     };
 
     renderEdit = () => {
-        return <button onClick={this.onToggleEdit}>Edit</button>;
+        return <Button flat primary onClick={this.onToggleEdit}>Edit</Button>;
     };
 
     addStage = () => {
@@ -35,8 +39,10 @@ export default class TopBar extends React.Component {
     render() {
         const isEditing = this.props.isEditing;
         return <navbar className="top-bar">
+        <AppBar fixed flat>
+
             <div className="nav-buttons">
-            <button onClick={this.addStage}>Add Stage</button>
+            <Button flat secondary onClick={this.addStage}>Add Stage</Button>
                 {(() => {
                     if (isEditing) {
                         return this.renderCancelEdit();
@@ -45,6 +51,7 @@ export default class TopBar extends React.Component {
                     }
                 })()}
             </div>
+            </AppBar>
         </navbar>;
     }
 }
