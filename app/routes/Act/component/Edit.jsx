@@ -62,7 +62,7 @@ export default class Edit extends React.Component
                   </button>
                 <button
                   styles={{color: 'white'}}
-                  onClick={this.updateAct} >
+                  monClick={this.updateAct} >
                   Save
                 </button>
             </div>

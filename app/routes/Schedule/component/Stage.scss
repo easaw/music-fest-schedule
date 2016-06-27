@@ -12,10 +12,14 @@
   justify-content: center;
   color: rgb(255, 255, 255);
   padding-bottom: 1vw;
-  .add-act {
+  font-size     : 1.5rem;
+  font-weight   : 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  .addAct {
     color: rgb(255,255,255);
   }
-  .delete-stage {
+  .deleteStage {
     color: rgb(255, 255, 255);
     display:block;
     float: right;

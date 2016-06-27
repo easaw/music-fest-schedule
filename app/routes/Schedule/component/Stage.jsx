@@ -3,6 +3,7 @@ import Acts from '../containers/Acts.jsx';
 import EditableText from './EditableText.jsx';
 import Act from '../../../model/act.js';
 import Moment from 'moment';
+import Styles from './Stage.scss';
 
 export default class Stage extends React.Component {
 
@@ -33,13 +34,13 @@ export default class Stage extends React.Component {
     render() {
         const {name, id, isEditing, stageStart, stageEnd, stageLength} = this.props;
         return (
-            <div className="stage">
-                <div className="day">
+            <div className={Styles.stage}>
+                <div className={Styles.day}>
                     <EditableText isEditing={isEditing} handleChange={this.handleChange} text={name}/>
-                    <button onClick={this.onDelete} className="delete-stage">
+                    <button onClick={this.onDelete} className={Styles.deleteAct}>
                         [x]
                     </button>
-                    <button onClick={this.onAddAct} className="add-act">
+                    <button onClick={this.onAddAct} className={Styles.addAct}>
                         [+]
                     </button>
                 </div>

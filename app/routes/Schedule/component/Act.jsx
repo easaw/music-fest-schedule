@@ -2,6 +2,7 @@ import React from 'react';
 import EditableText from './EditableText.jsx';
 import Time from './Time.jsx';
 import {Link} from 'react-router'
+import Styles from './Act.scss';
 
 export default class Act extends React.Component
 {
@@ -68,24 +69,24 @@ export default class Act extends React.Component
         const {djNameTextSize} = this.state;
         const path = `/act/${id}`;
 
-        return <div className="act" style={{
+        return <div className={Styles.act} style={{
             height: `${height}px`,
             top: `${top}px`,
             width: '100%'
         }} ref="act">
-            <div className="time-container" ref="timeContainer">
-                <div className="time">
+            <div className={Styles.timeContainer} ref="timeContainer">
+                <div className={Styles.time}>
                     <Time time={start}/>
                     -
                     <Time time={end}/>
                 </div>
-                <button className="delete-act" onClick={this.handleActDelete}>
+                <button className={Styles.deleteAct} onClick={this.handleActDelete}>
                     [x]
                 </button>
                 <Link to={path}>Edit</Link>
             </div>
-            <div className="e-title" ref="title">
-                <span className="dj_name" style={{
+            <div className={Styles.eTitle} ref="title">
+                <span className={Styles.dj_name} style={{
                     fontSize: djNameTextSize
                 }} ref="djName">
                     <EditableText text={dj} isEditing={isEditing} handleChange={this.handleChange}/>

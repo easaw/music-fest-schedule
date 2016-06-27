@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import Act from '../containers/Act.jsx';
+import Styles from './Acts.scss';
 
 export default class Acts extends React.Component {
 
@@ -30,7 +31,7 @@ export default class Acts extends React.Component {
         const {isEditing, acts, stageStart, stageEnd, stageLength} = this.props;
         const height = this.state.height;
         return (
-            <div className="acts">
+            <div className={Styles.acts}>
                 {acts.map((a) => {
                     return (<Act key={a.id}  height={height} stageStart={stageStart} stageEnd={stageEnd} stageLength={stageLength}  {...a} />);
                 }, this)}

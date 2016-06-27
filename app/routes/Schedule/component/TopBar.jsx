@@ -2,6 +2,7 @@ import React from 'react';
 import Stage from '../../../model/stage'
 import AppBar from 'react-toolbox/lib/app_bar';
 import {Button, IconButton} from 'react-toolbox/lib/button';
+import styles from './TopBar.scss';
 
 
 export default class TopBar extends React.Component {
@@ -38,10 +39,10 @@ export default class TopBar extends React.Component {
 
     render() {
         const isEditing = this.props.isEditing;
-        return <navbar className="top-bar">
+        return <navbar className={styles.top}>
         <AppBar fixed flat>
 
-            <div className="nav-buttons">
+            <div className={styles.navbar}>
             <Button flat secondary onClick={this.addStage}>Add Stage</Button>
                 {(() => {
                     if (isEditing) {
