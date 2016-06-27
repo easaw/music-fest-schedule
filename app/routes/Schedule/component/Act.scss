@@ -10,12 +10,14 @@
     .timeContainer {
         display: flex;
         justify-content: start;
-
         .time {
             border-top-color: rgb(255, 29, 141);
             border-top-style: solid;
             border-top-width: 1vw;
             padding-top: 1vw;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            font-size: 1.15rem;
         }
     }
     .eTitle {
@@ -27,16 +29,17 @@
         justify-content: center;
         width: 100%;
         padding-bottom: 10px;
-
         .djName {
             align-self: center;
             display: block;
             width: 100%;
             overflow: hidden;
+            color: rgb(255, 29, 141);
+            letter-spacing: 0.05em;
+            font-weight: 400;
         }
     }
 }
-
 .deleteAct {
-  color: rgb(255,255,255);
+    color: rgb(255,255,255);
 }

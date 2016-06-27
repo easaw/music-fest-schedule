@@ -1,6 +1,7 @@
 import React from 'react';
 import Stage from '../containers/Stage.jsx';
 import _ from 'lodash';
+import Styles from './Stages.scss';
 
 export default class Stages extends React.Component {
 
@@ -14,7 +15,7 @@ export default class Stages extends React.Component {
     render() {
         const {stages, start, length, isEditing, stageStart, stageEnd, stageLength} = this.props;
         return (
-            <div ref="schedule" className="schedule">
+            <div ref="schedule" className={Styles.stages}>
                 {(() => {
                     if (isEditing) {
                         return <button>Add Stage</button>;
