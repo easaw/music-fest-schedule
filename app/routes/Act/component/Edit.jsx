@@ -3,6 +3,8 @@ import Moment from 'moment';
 import TimePicker from 'react-toolbox/lib/time_picker';
 import Input from 'react-toolbox/lib/input';
 import Dropdown from 'react-toolbox/lib/dropdown';
+import {Button, IconButton} from 'react-toolbox/lib/button';
+import Styles from './Edit.scss';
 
 export default class Edit extends React.Component
 {
@@ -26,7 +28,9 @@ export default class Edit extends React.Component
         stages: React.PropTypes.array.isRequired
     };
 
-    updateAct = (event) => {};
+    updateAct = (event) => {
+      event.preventDefault();
+    };
 
     handleChange = (name, value) => {
         this.setState({
@@ -35,29 +39,32 @@ export default class Edit extends React.Component
         });
     }
 
+    updateAct =  () => {
+
+    }
+
+    cancelUpdate = () => {
+      
+    }
+
     render() {
         const {start, end, dj, stageId} = this.state;
         const {stages} = this.props;
         const handleChange = this.handleChange;
         debugger;
 
-        return <form onSubmit={this.updateAct}>
+        return <form onSubmit={this.updateAct} className={Styles.form}>
             <TimePicker label="start time" onChange={this.handleChange.bind(this, 'start')} value={start}/>
             <TimePicker label="end time" onChange={this.handleChange.bind(this, 'end')} value={end}/>
-            <Input Label="DJ" onChange={this.handleChange.bind(this, 'dj')} value={dj}/>
-            Stage:
-            <Dropdown auto onChange={this.handleChange.bind(this, 'stageId')} source={stages}></Dropdown>
+            <Input label="DJ" onChange={this.handleChange.bind(this, 'dj')} value={dj}/>
+            <Dropdown label="select a stage" auto onChange={this.handleChange.bind(this, 'stageId')} value={stageId}  source={stages}></Dropdown>
             <div>
-                <button styles={{
-                    color: 'white'
-                }} onClick={this.cancelUpdate}>
+                <Button  onClick={this.cancelUpdate}>
                     Cancel
-                </button>
-                <button styles={{
-                    color: 'white'
-                }} monClick={this.updateAct}>
+                </Button>
+                <Button  onClick={this.updateAct}>
                     Save
-                </button>
+                </Button>
             </div>
         </form>;
     }

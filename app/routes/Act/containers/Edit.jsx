@@ -8,7 +8,7 @@ const mapStateToProps = (state, ownProps) => {
     const {id} = ownProps;
     const act = state.acts[id];
     const stages = _.map(state.stages, (s, index) => {
-        return {id: index, name: s.name};
+        return {value: index, label: s.name};
     });
     return {
         dj: act.dj,
