@@ -29,7 +29,7 @@ export default class Clock extends React.Component {
         const time = this.props.time;
         return (
             <div className={Styles.clock}>
-                <Time time={time}/>
+                <Time time={time} className={Styles.time}  />
             </div>
         );
     }

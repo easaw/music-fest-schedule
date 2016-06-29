@@ -25,11 +25,11 @@ export default class TopBar extends React.Component {
     };
 
     renderCancelEdit = () => {
-        return <Button flat primary onClick={this.onToggleEdit}>Done</Button>;
+        return <Button flat primary  inverse onClick={this.onToggleEdit}>Done</Button>;
     };
 
     renderEdit = () => {
-        return <Button flat primary onClick={this.onToggleEdit}>Edit</Button>;
+        return <Button flat primary inverse onClick={this.onToggleEdit}>Edit</Button>;
     };
 
     addStage = () => {
@@ -40,10 +40,9 @@ export default class TopBar extends React.Component {
     render() {
         const isEditing = this.props.isEditing;
         return <navbar className={styles.top}>
-        <AppBar fixed flat>
+        <AppBar>
 
-            <div className={styles.navbar}>
-            <Button flat secondary onClick={this.addStage}>Add Stage</Button>
+            <Button flat secondary inverse onClick={this.addStage}>Add Stage</Button>
                 {(() => {
                     if (isEditing) {
                         return this.renderCancelEdit();
@@ -51,7 +50,6 @@ export default class TopBar extends React.Component {
                         return this.renderEdit();
                     }
                 })()}
-            </div>
             </AppBar>
         </navbar>;
     }

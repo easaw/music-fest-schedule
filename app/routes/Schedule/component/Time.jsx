@@ -3,7 +3,7 @@ import dateFormat from '../../../formatters/date.js';
 
 const Time =  (props) => {
     return (
-        <span style={props.styles} className="time">
+        <span style={props.styles} className={props.className}>
             {dateFormat(props.time)}
         </span>
     );

@@ -92,7 +92,7 @@ export default class Act extends React.Component
                 <Link to={path}>Edit</Link>
             </div>
             <div className={Styles.eTitle} ref="title">
-                <span className={Styles.dj_name} style={{
+                <span className={Styles.djName} style={{
                     fontSize: djNameTextSize
                 }} ref="djName">
                     <EditableText text={dj} isEditing={isEditing} handleChange={this.handleChange}/>
