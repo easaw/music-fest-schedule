@@ -3,7 +3,7 @@ import Moment from 'moment';
 import TimePicker from 'react-toolbox/lib/time_picker';
 import Input from 'react-toolbox/lib/input';
 import Dropdown from 'react-toolbox/lib/dropdown';
-import {Button, IconButton} from 'react-toolbox/lib/button';
+import {Button} from 'react-toolbox/lib/button';
 import Styles from './Edit.scss';
 
 export default class Edit extends React.Component
@@ -44,7 +44,7 @@ export default class Edit extends React.Component
     }
 
     cancelUpdate = () => {
-      
+
     }
 
     render() {
