@@ -9,7 +9,10 @@ export default class Stages extends React.Component {
         stages: React.PropTypes.array,
         start: React.PropTypes.string,
         length: React.PropTypes.number,
-        isEditing: React.PropTypes.bool
+        isEditing: React.PropTypes.bool,
+        stageStart: React.PropTypes.number,
+        stageEnd: React.PropTypes.number,
+        stageLength: React.PropTypes.number
     }
 
     render() {

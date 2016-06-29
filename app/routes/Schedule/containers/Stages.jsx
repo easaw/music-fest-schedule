@@ -4,7 +4,7 @@ import _ from 'lodash';
 import Moment from 'moment';
 import {addStage, renameStage, deleteStage, attachAct, addAct} from '../../../actions/index.js';
 import Stages from '../component/Stages.jsx';
-import { timeToPixels, timeDifference } from '../../../helpers';
+import {timeDifference } from '../../../helpers';
 
 
 const mapStateToProps = (state) => {

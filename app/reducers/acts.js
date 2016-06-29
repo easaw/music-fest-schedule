@@ -1,7 +1,4 @@
-import uuid from 'node-uuid';
-import moment from 'moment';
 import initialState from '../static/state.js';
-import update from 'react-addons-update';
 
 
 const acts = (state = initialState, action) => {

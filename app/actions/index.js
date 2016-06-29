@@ -11,7 +11,7 @@ export const toggleEditing = () => {
   return {
     type: 'TOGGLE_EDITING'
   };
-}
+};
 
 export const resize = (newHeight) => {
     return {

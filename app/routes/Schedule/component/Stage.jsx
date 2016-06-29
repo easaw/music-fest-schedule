@@ -10,7 +10,14 @@ export default class Stage extends React.Component {
     static propTypes = {
         name: React.PropTypes.string,
         id: React.PropTypes.string,
-        isEditing: React.PropTypes.bool
+        isEditing: React.PropTypes.bool,
+        renameStage: React.PropTypes.func.isRequired,
+        deleteStage: React.PropTypes.func.isRequired,
+                attachAct: React.PropTypes.func.isRequired,
+                        stageStart: React.PropTypes.func.isRequired,
+        addAct:  React.PropTypes.func.isRequired,
+        stageEnd: React.PropTypes.string,
+        stageLength:React.PropTypes.string
     };
 
     handleChange = (event) => {
@@ -26,13 +33,22 @@ export default class Stage extends React.Component {
     onAddAct = () => {
         const {id, addAct, attachAct, stageStart} = this.props;
         const act = new Act();
-        act.start = Moment(stageStart).subtract(1, 'h').format();
+        act.start = Moment(stageStart)
+            .subtract(1, 'h')
+            .format();
         act.end = Moment(stageStart).format();
         addAct(act);
         attachAct(id, act.id);
     }
     render() {
-        const {name, id, isEditing, stageStart, stageEnd, stageLength} = this.props;
+        const {
+            name,
+            id,
+            isEditing,
+            stageStart,
+            stageEnd,
+            stageLength
+        } = this.props;
         return (
             <div className={Styles.stage}>
                 <div className={Styles.day}>

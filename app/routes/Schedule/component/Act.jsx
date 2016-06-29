@@ -1,7 +1,7 @@
 import React from 'react';
 import EditableText from './EditableText.jsx';
 import Time from './Time.jsx';
-import {Link} from 'react-router'
+import {Link} from 'react-router';
 import Styles from './Act.scss';
 
 export default class Act extends React.Component
@@ -14,10 +14,19 @@ export default class Act extends React.Component
     }
 
     static propTypes = {
+      id: React.PropTypes.string.isRequired,
         act: React.PropTypes.object.isRequired,
         height: React.PropTypes.number.isRequired,
         top: React.PropTypes.number.isRequired,
-        renameAct: React.PropTypes.func.isRequired
+        renameAct: React.PropTypes.func.isRequired,
+        start: React.PropTypes.number.isRequired,
+                end: React.PropTypes.number.isRequired,
+        dj: React.PropTypes.string.isRequired,
+        isEditing: React.PropTypes.bool.isRequired,
+        stageStart: React.PropTypes.number.isRequired,
+        stageEnd: React.PropTypes.number.isRequired,
+        stageLength: React.PropTypes.number.isRequired
+
     };
 
     static defaultProps = {
@@ -61,10 +70,7 @@ export default class Act extends React.Component
             dj,
             height,
             top,
-            isEditing,
-            stageStart,
-            stageEnd,
-            stageLength
+            isEditing
         } = this.props;
         const {djNameTextSize} = this.state;
         const path = `/act/${id}`;

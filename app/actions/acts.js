@@ -5,12 +5,12 @@ export const renameAct = (id, newName) => {
     type: 'RENAME_ACT',
     id: id,
     newName
-  }
-}
+  };
+};
 
 export const addAct = (act = new Act()) => {
   return {
     type: 'ADD_ACT',
     act
   };
-}
+};

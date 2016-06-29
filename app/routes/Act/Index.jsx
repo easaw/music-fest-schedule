@@ -6,4 +6,10 @@ export default class Act extends React.Component {
     const {id} = this.props.params;
     return <Edit id={id} />;
   }
+
+  static propTypes = {
+    params:  React.PropTypes.object;
+  }
+
+
 }

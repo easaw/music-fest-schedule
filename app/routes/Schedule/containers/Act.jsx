@@ -2,11 +2,11 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Stages from '../component/Act.jsx';
 import _ from 'lodash';
-import { renameAct } from '../../../actions/index.js'
+import { renameAct } from '../../../actions/index.js';
 import { timeToPixels, timeDifference } from '../../../helpers';
 
 const mapStateToProps = (state, ownProps) => {
-    const {id, stageStart, stageEnd, stageLength} = ownProps;
+    const {stageStart, stageLength} = ownProps;
     const act = _.find(state.acts, {id: ownProps.id});
 
     const actLength = timeDifference(act.start, act.end);
@@ -24,7 +24,7 @@ const mapStateToProps = (state, ownProps) => {
     };
 };
 
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
       renameAct
   }, dispatch);

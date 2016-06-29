@@ -13,9 +13,6 @@ export default class Schedule extends React.Component {
     }
 
     render() {
-      debugger;
-      const styles = Styles;
-        const isEditing = this.state.isEditing;
         return (
             <div className={Styles.stagesContainer}>
                 <div className={Styles.top}>

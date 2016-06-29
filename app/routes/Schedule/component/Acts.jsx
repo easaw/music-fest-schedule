@@ -13,7 +13,11 @@ export default class Acts extends React.Component {
     }
 
     static propTypes = {
-        acts: React.PropTypes.array
+        acts: React.PropTypes.array,
+        isEditing: React.PropTypes.bool,
+        stageStart: React.PropTypes.number,
+        stageEnd: React.PropTypes.number,
+        stageLength: React.PropTypes.number
     };
 
     componentDidMount() {
@@ -28,7 +32,7 @@ export default class Acts extends React.Component {
     };
 
     render() {
-        const {isEditing, acts, stageStart, stageEnd, stageLength} = this.props;
+        const { acts, stageStart, stageEnd, stageLength} = this.props;
         const height = this.state.height;
         return (
             <div className={Styles.acts}>

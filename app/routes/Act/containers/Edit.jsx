@@ -2,7 +2,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import Edit from '../component/Edit.jsx';
 import _ from 'lodash';
-import {renameAct} from '../../../actions/index.js'
+import {renameAct} from '../../../actions/index.js';
 
 const mapStateToProps = (state, ownProps) => {
     const {id} = ownProps;
@@ -20,7 +20,7 @@ const mapStateToProps = (state, ownProps) => {
     };
 };
 
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch) => {
     return bindActionCreators({
         renameAct
     }, dispatch);

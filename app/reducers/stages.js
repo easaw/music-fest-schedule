@@ -12,7 +12,6 @@ const stages = (state = initialState, action) => {
             }
         case 'DELETE_STAGE':
             {
-              var z = _.omit(state, action.id);
                 return _.omit(state, action.id);
             }
         case 'RENAME_STAGE':
@@ -35,8 +34,8 @@ const stages = (state = initialState, action) => {
         {
           const {stageId, actId} = action;
           const newState = {...state};
-          state[stageId].acts.push(actId);
-          return state;
+          newState[stageId].acts.push(actId);
+          return newState;
         }
         case 'DETTACH_ACT':
         {

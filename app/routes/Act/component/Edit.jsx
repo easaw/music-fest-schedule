@@ -10,8 +10,8 @@ export default class Edit extends React.Component
           start: Moment(props.start).format('HH:mm'),
           end: Moment(props.end).format('HH:mm'),
           id: props.id,
-          stageId: props.stageId,
-        }
+          stageId: props.stageId
+        };
     }
 
     static propTypes = {
@@ -23,7 +23,7 @@ export default class Edit extends React.Component
         stages: React.PropTypes.array.isRequired
     };
 
-    updateAct = (event) => {};
+    updateAct = () => {};
 
     render() {
         const {start, end, dj, stageId} = this.state;

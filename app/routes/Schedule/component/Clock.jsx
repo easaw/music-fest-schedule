@@ -9,7 +9,7 @@ export default class Clock extends React.Component {
     }
 
     static propTypes = {
-        onTick: React.PropTypes.func,
+        timeTick: React.PropTypes.func,
         time: React.PropTypes.number
     }
 

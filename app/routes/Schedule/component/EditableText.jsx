@@ -16,11 +16,13 @@ const EditableText =  ({isEditing, handleChange, text, editStyles, displayStyles
 
 
 EditableText.propTypes = {
+  editStyles: React.PropTypes.object,
+    displayStyles: React.PropTypes.object,
   isEditing: React.PropTypes.bool.isRequired,
   handleChange: React.PropTypes.func.isRequired,
   text: React.PropTypes.string.isRequired,
   styles: React.PropTypes.object,
-  label: React.PropTypes.string,
+  label: React.PropTypes.string
 };
 
-export default EditableText
+export default EditableText;

@@ -5,12 +5,12 @@ import TopBar from '../component/TopBar.jsx';
 
 
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
     const isEditing = state.isEditing;
     return {isEditing};
 };
 
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
     toggleEditing,
     addStage

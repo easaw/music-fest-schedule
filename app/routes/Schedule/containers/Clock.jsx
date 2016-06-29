@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Clock from '../component/Clock.jsx';
-import { timeTick } from '../../../actions/index.js'
+import { timeTick } from '../../../actions/index.js';
 
 const mapStateToProps = (state) => {
     return {time: state.time};
