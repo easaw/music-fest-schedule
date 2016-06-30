@@ -1,10 +1,13 @@
 import { Act } from '../model/act';
 
-export const renameAct = (id, newName) => {
+export const updateAct = (id, newName, newStart, newEnd, newStage) => {
   return {
-    type: 'RENAME_ACT',
+    type: 'UPDATE_ACT',
     id: id,
-    newName
+    newName,
+    newStart,
+    newEnd,
+    newStage,
   };
 };
 

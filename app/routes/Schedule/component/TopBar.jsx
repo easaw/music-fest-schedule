@@ -1,7 +1,7 @@
 import React from 'react';
-import Stage from '../../../model/stage';
+import Stage from '../../../model/stage'
 import AppBar from 'react-toolbox/lib/app_bar';
-import {Button} from 'react-toolbox/lib/button';
+import {Button, IconButton} from 'react-toolbox/lib/button';
 import styles from './TopBar.scss';
 
 
@@ -20,7 +20,7 @@ export default class TopBar extends React.Component {
         toggleEditing: React.PropTypes.func.isRequired
     };
 
-    onToggleEdit = () => {
+    onToggleEdit = (event) => {
       this.props.toggleEditing();
     };
 
@@ -42,7 +42,7 @@ export default class TopBar extends React.Component {
         return <navbar className={styles.top}>
         <AppBar>
 
-            <Button flat secondary inverse onClick={this.addStage}>Add Stage</Button>
+            <Button flat secondary  inverse onClick={this.addStage}>Add Stage</Button>
                 {(() => {
                     if (isEditing) {
                         return this.renderCancelEdit();
