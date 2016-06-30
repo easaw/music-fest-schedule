@@ -19,9 +19,9 @@ export default class Schedule extends React.Component {
                     <TopBar/>
                     <Clock/>
                 </div>
-                <div className={Styles.bottom}>
-                    <Stages />
-                </div>
+                    <div className={Styles.bottom + ' container'}>
+                        <Stages/>
+                    </div>
             </div>
         );
     }
