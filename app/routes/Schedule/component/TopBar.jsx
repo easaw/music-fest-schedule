@@ -42,7 +42,7 @@ export default class TopBar extends React.Component {
         return <navbar className={styles.top}>
         <AppBar>
 
-            <Button flat secondary  inverse onClick={this.addStage}>Add Stage</Button>
+            <Button flat   inverse onClick={this.addStage}>Add Stage</Button>
                 {(() => {
                     if (isEditing) {
                         return this.renderCancelEdit();

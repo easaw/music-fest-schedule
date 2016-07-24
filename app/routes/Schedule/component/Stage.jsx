@@ -13,11 +13,11 @@ export default class Stage extends React.Component {
         isEditing: React.PropTypes.bool,
         renameStage: React.PropTypes.func.isRequired,
         deleteStage: React.PropTypes.func.isRequired,
-                attachAct: React.PropTypes.func.isRequired,
-                        stageStart: React.PropTypes.func.isRequired,
-        addAct:  React.PropTypes.func.isRequired,
+        attachAct: React.PropTypes.func.isRequired,
+        addAct: React.PropTypes.func.isRequired,
+        stageStart: React.PropTypes.string.isRequired,
         stageEnd: React.PropTypes.string,
-        stageLength:React.PropTypes.string
+        stageLength: React.PropTypes.number
     };
 
     handleChange = (event) => {
@@ -33,9 +33,7 @@ export default class Stage extends React.Component {
     onAddAct = () => {
         const {id, addAct, attachAct, stageStart} = this.props;
         const act = new Act();
-        act.start = Moment(stageStart)
-            .subtract(1, 'h')
-            .format();
+        act.start = Moment(stageStart).subtract(1, 'h').format();
         act.end = Moment(stageStart).format();
         addAct(act);
         attachAct(id, act.id);

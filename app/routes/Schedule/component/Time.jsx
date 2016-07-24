@@ -11,7 +11,7 @@ const Time =  (props) => {
 
 Time.propTypes = {
   styles: React.PropTypes.object,
-  time: React.PropTypes.string
+  time: React.PropTypes.number
 };
 
 export default Time;

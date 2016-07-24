@@ -15,8 +15,8 @@ export default class Acts extends React.Component {
     static propTypes = {
         acts: React.PropTypes.array,
         isEditing: React.PropTypes.bool,
-        stageStart: React.PropTypes.number,
-        stageEnd: React.PropTypes.number,
+        stageStart: React.PropTypes.string,
+        stageEnd: React.PropTypes.string,
         stageLength: React.PropTypes.number
     };
 

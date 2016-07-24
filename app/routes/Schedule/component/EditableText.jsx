@@ -4,13 +4,13 @@ import Input from 'react-toolbox/lib/input';
 const EditableText =  ({isEditing, handleChange, text, editStyles, displayStyles, label}) => {
     if (isEditing) {
       return <Input
-        styles={editStyles}
+        style={editStyles}
         type="text"
         label={label}
         defaultValue={text}
         onChange={handleChange} />;
     } else {
-      return <span styles={displayStyles} >{text}</span>;
+      return <span style={displayStyles} >{text}</span>;
     }
 };
 

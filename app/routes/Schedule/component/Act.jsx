@@ -20,11 +20,11 @@ export default class Act extends React.Component
         top: React.PropTypes.number.isRequired,
         renameAct: React.PropTypes.func.isRequired,
         start: React.PropTypes.number.isRequired,
-                end: React.PropTypes.number.isRequired,
+        end: React.PropTypes.number.isRequired,
         dj: React.PropTypes.string.isRequired,
         isEditing: React.PropTypes.bool.isRequired,
-        stageStart: React.PropTypes.number.isRequired,
-        stageEnd: React.PropTypes.number.isRequired,
+        stageStart: React.PropTypes.string.isRequired,
+        stageEnd: React.PropTypes.string.isRequired,
         stageLength: React.PropTypes.number.isRequired
 
     };

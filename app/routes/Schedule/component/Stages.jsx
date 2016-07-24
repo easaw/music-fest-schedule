@@ -6,12 +6,12 @@ import Styles from './Stages.scss';
 export default class Stages extends React.Component {
 
     static propTypes = {
-        stages: React.PropTypes.array,
+        stages: React.PropTypes.object,
         start: React.PropTypes.string,
         length: React.PropTypes.number,
         isEditing: React.PropTypes.bool,
-        stageStart: React.PropTypes.number,
-        stageEnd: React.PropTypes.number,
+        stageStart: React.PropTypes.string,
+        stageEnd: React.PropTypes.string,
         stageLength: React.PropTypes.number
     }
 

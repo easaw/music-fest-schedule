@@ -27,6 +27,10 @@ export default class Edit extends React.Component
         stages: React.PropTypes.array.isRequired
     };
 
+    static contextTypes ={
+      router: React.PropTypes.func.isRequired
+    }
+
     updateAct = (event) => {
         event.preventDefault();
     };
