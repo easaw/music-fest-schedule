@@ -17,3 +17,11 @@ export const addAct = (act = new Act()) => {
     act
   };
 };
+
+export const renameAct = (id, newActname) => {
+  return {
+    type: 'RENAME_ACT',
+    id,
+    newActname
+  };
+};
